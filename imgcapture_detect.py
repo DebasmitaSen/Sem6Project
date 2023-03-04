@@ -1,7 +1,7 @@
 import cv2 
 
 #ip = input("IP address of device: ")
-vid = cv2.VideoCapture("http://192.168.244.100:4747/video?640x480")
+vid = cv2.VideoCapture("http://192.168.32.74:4747/video?640x480")
 result,image=vid.read()
 if result:
 
