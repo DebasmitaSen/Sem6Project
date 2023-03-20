@@ -35,9 +35,9 @@ for filename in image_files:
         
         words = filename.split('-')
         img_id=words[0].split('_')
-        name=img_id[0];
-        Id=int(img_id[1])
-        print(words[1][0])
+        name=img_id[0]
+        Id=img_id[1]
+        photonum=words[1].split(".")
         
         Iddir_path=os.path.join(parent_dir,img_id[1])
         if not os.path.isdir(Iddir_path):
@@ -51,24 +51,40 @@ for filename in image_files:
         except:
            pass
         f.close()
-        shutil.copy(os.path.join(folder_path, filename),Iddir_path)
-        os.rename(os.path.join(Iddir_path, filename),os.path.join(Iddir_path,"img"+words[1][0]+".jpg"))
+        
+        os.rename(os.path.join(folder_path, filename),os.path.join(Iddir_path,"img"+photonum[0]+".jpg"))
         print("Image {} has been inserted into the database with id {}".format(filename, cursor.lastrowid))
-        db.close()
+        
 
 
 def retrive():
   
-   query2="SELECT id,Image FROM images"
+   query2="SELECT id,Name,Image FROM images"
    cursor.execute(query2)
-   classID=cursor.fetchall('Image')
-   images=cursor.fetchall('id')
-   print(classID)
-   print(images) 
-   
+   classID=[]
+   names=[]
+   images=[]
+   result=cursor.fetchall()
+   lengh=len(result)
+   for x in range (lengh) :
+      c,n,i=result[x]
+      classID.append(c)
+      names.append(n)
+      images.append(i)
+   return  classID,names,images
+
+arrays=retrive()
+
+classID=arrays[0]
+names=arrays[1]
+images=arrays[2]
+
 def crbk():
-   shutil.move("Input/","Backup/")
-   os.mkdir('Input')
+  for filename in image_files:
+    if os.path.isdir(os.path.join(folder_path, filename)):
+     os.remove(os.path.join(folder_path, filename))
+
+# close the database connection
+db.close()
 #retrive()
 crbk()
-# close the database connection
