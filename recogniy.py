@@ -2,6 +2,7 @@ import cv2
 import dlib
 import face_recognition
 import numpy as np
+import connection
 
 #code to connect to database and collect images and the id of student
 #array name must be 'images'
@@ -20,8 +21,8 @@ encoded_face_train = findEncodings(image)
 
 
 #code to add attendance to the database according to the id sent as match
-def markAttendance(ID):
-    pass
+# def markAttendance(ID):
+#     pass
 
 
 # take pictures from device
