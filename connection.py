@@ -35,7 +35,7 @@ for filename in image_files:
         
         words = filename.split('-')
         img_id=words[0].split('_')
-        name=img_id[0];
+        name=img_id[0]
         Id=int(img_id[1])
         print(words[1][0])
         
