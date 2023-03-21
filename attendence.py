@@ -17,7 +17,3 @@ def markAttendance(ID):
     data = (ID, name)
 
     db_execute_query.execute_query(connection, query_2, data)
-
-
-# Testing....
-markAttendance(3)
