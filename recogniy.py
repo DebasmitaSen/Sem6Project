@@ -3,6 +3,7 @@ import dlib
 import face_recognition
 import numpy as np
 import connection
+import attendence
 
 #code to connect to database and collect images and the id of student
 #array name must be 'images'
