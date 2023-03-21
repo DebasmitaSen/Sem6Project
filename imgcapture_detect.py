@@ -7,7 +7,7 @@ if result:
 
     # showing result, it take frame name and image
     # output
-    imggray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+    #imggray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     cv2.imshow("img1", imggray)
 
     # saving image in local storage
