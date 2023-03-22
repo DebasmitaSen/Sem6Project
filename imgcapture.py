@@ -9,7 +9,8 @@ if not cap.isOpened():
 
 # Initialize a variable to keep track of the number of frames captured
 frame_count = 0
-
+id=input("Enter ID: ")
+name=input("Enter Name: ")
 # Loop through the frames of the video
 while cap.isOpened() and frame_count < 10:
     # Read the next frame from the video
@@ -23,7 +24,7 @@ while cap.isOpened() and frame_count < 10:
     cv2.imshow('frame', frame)
 
     # Save the current frame to a file
-    cv2.imwrite(f'Input/img{frame_count}.jpg', frame)
+    cv2.imwrite(f'Input/{name}_{id}_{frame_count}.jpg', frame)
 
     # Increment the frame count
     frame_count += 1
