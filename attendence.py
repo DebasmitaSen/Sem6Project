@@ -16,7 +16,7 @@ def total_attendence(ID, connection, name) :
         data = (ID, name)
 
         db_execute_query.execute_query(connection, query_2, data)
-        exit()
+        return
     
     query_3 = """
     update total_attendence set total_att = total_att + 1 where id = %s
@@ -57,7 +57,7 @@ def markAttendance(ID) :
 
     if not time_stamp :
         enter_attendence(ID, connection)
-        exit()
+        return
     
     time_stamp = db_data_unpack.unpack(time_stamp)
 
@@ -66,3 +66,5 @@ def markAttendance(ID) :
 
     if time_diff > 1 :
         enter_attendence(ID, connection)
+
+markAttendance(3)
