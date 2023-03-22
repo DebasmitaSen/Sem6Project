@@ -42,7 +42,3 @@ def markAttendance(ID) :
 
     if time_diff > 1 :
         enter_attendence(ID, connection)
-
-
-# Testing....
-markAttendance(3)
