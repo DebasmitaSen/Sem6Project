@@ -66,5 +66,3 @@ def markAttendance(ID) :
 
     if time_diff > 1 :
         enter_attendence(ID, connection)
-
-markAttendance(3)
