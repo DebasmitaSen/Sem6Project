@@ -27,7 +27,7 @@ def markAttendance(ID) :
     connection = db_conn.create_db_connection("localhost", "root", "", "person")
 
     query_1 = """
-    select login_info from attendence where id = %s order by sl_no desc limit 1
+    select login_info from attendence where id = %s order by login_info desc limit 1
     """
 
     time_stamp = db_execute_query.read_query(connection, query_1, ID)
