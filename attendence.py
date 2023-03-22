@@ -19,6 +19,7 @@ def enter_attendence(ID, connection) :
     data = (ID, name)
 
     db_execute_query.execute_query(connection, query_2, data)
+    connection.close()
 
 def markAttendance(ID) :
 
