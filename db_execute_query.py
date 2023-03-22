@@ -8,6 +8,14 @@ def execute_query(conn, query, val) :
     except Error as error :
         print(f"Failed to commit query {error}")
 
+def execute_query_(conn, query, val) :
+    cursor = conn.cursor()
+    try :
+        cursor.execute(query, (val,))
+        conn.commit()
+    except Error as error :
+        print(f"Failed to commit query {error}")
+
 def read_query(conn, query, val) :
     cursor = conn.cursor()
     result = None

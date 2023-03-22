@@ -3,6 +3,28 @@ import db_execute_query
 import db_data_unpack
 import datetime
 
+def total_attendence(ID, connection, name) :
+    query_1 = """
+    select total_att from total_attendence where id = %s
+    """
+    total_att = db_execute_query.read_query(connection, query_1, ID)
+
+    if not total_att :
+        query_2 = """
+        insert into total_attendence(id, name, total_att) values (%s, %s, 1)
+        """
+        data = (ID, name)
+
+        db_execute_query.execute_query(connection, query_2, data)
+        exit()
+    
+    query_3 = """
+    update total_attendence set total_att = total_att + 1 where id = %s
+    """
+
+    db_execute_query.execute_query_(connection, query_3, ID)
+
+
 def enter_attendence(ID, connection) :
     query_1 = """
     select Name from images where id = %s;
@@ -19,6 +41,7 @@ def enter_attendence(ID, connection) :
     data = (ID, name)
 
     db_execute_query.execute_query(connection, query_2, data)
+    total_attendence(ID, connection, name)
     connection.close()
 
 def markAttendance(ID) :
