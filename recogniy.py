@@ -9,7 +9,7 @@ import os
 #code to connect to database and collect images and the id of student
 #array name must be 'images'
 #array for id must be 'classID'
-
+list1=connection.images
 name1=connection.names
 cid=connection.classID
 name2=[]
@@ -26,7 +26,7 @@ def findEncodings(image):
         encodeList.append(encoded_face)
     return encodeList
 
-list1=connection.images
+
 var="/img"
 count=1
 list2=[]
@@ -50,10 +50,11 @@ for i in range(len(list3)):
     path=list3[i]
     imgx=cv2.imread(path)
     imagelist.append(imgx)
-    
-##imgx=cv2.imread(path)
-##cv2.imshow('img',imgx)
-##cv2.waitKey(0)
+    i=i+1
+##for img in imagelist:    
+####    imgx=cv2.imread(path)
+##    cv2.imshow('img',img) 
+##    cv2.waitKey(0)
 encoded_face_train = findEncodings(imagelist)
 
 
