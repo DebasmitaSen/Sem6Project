@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 08:10 PM
+-- Generation Time: Mar 23, 2023 at 06:17 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -65,9 +65,7 @@ INSERT INTO `images` (`id`, `Name`, `Image`) VALUES
 (3, 'Rahul', 'Data/3'),
 (14, 'Debu', 'Data/14'),
 (20, 'Rajdip', 'Data/20'),
-(31, 'Sambho', 'Data/31'),
-(43, 'Romit', 'Data/43'),
-(84, 'Rajesh', 'Data/84');
+(43, 'Romit', 'Data/43');
 
 -- --------------------------------------------------------
 
