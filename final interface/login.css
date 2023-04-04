@@ -1,0 +1,339 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body
+{
+   
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #829986;
+}
+
+
+.nav-bar
+{
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    width: 1280px;
+    height: 35px;
+    background:#829990;
+    border:0px  #829986;
+    border-radius: 20px;
+    box-shadow:-18px 18px 36px #697c6d,18px -18px 36px #9bb69f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.nav-bar .icon-arrow
+{
+    position: absolute;
+    height: 50px;
+    right: 0%;
+    
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.nav-bar h3
+{
+    position: absolute;
+    height: 22px;
+    left: 10px;
+    color: #023020;
+    
+   
+}
+.downbar
+{
+    position: absolute;
+    bottom: 0%;
+    width: 1366px;
+    height: 60px;
+    background:#032318;
+    border:0px  #829986;
+    border-radius: 0px;
+    box-shadow:-18px 18px 36px #697c6d,18px -18px 36px #9bb69f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.container
+{
+    height: 250px;
+    width: 1110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+ .container .btn1
+{
+    
+    width: 250px;
+    height: 250px;
+    background:linear-gradient(145deg, #758a79, #8ba48f);;
+    box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
+    border-top: 2px solid #2f5234;
+    border-left:2px solid #2f5234;
+    border-right:2px solid #2f5234;
+    border-bottom:2px solid #2f5234;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 82px;
+    color: #c0bda5;
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+}
+.container .btn1:hover
+{
+    letter-spacing: 3px;
+}
+/* .container .btn1::before
+{
+    content: '';
+    position: relative;
+    top: 30px;;
+    left:0px ;
+    width:10%;
+    height:100%;
+    background: linear-gradient(to right,#10544d,transparent);
+    transform: skewX(0deg)translateX(0);
+
+} */
+.container .btn1:hover ::before
+{
+    transform:skewX(40deg) translateX(200%);
+}
+
+ion-icon{
+    
+    color:#023020;
+    font-size: 50px;
+     /* padding-top: 50px; */
+    padding-right: -10px; 
+}
+.container .btn1 a{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:#c0bda5;
+
+}
+
+
+
+
+
+.container .btn2
+{
+    width: 250px;
+    height: 250px;
+    background:#829986;
+    box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
+    border-top: 2px solid #2f5234;
+    border-left:2px solid #2f5234;
+    border-right:2px solid #2f5234;
+    border-bottom:2px solid #2f5234;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 82px;
+    color: rgb(227, 238, 234);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+}
+.container .btn2:hover
+{
+    letter-spacing: 3px;
+}
+/* .container .btn2::before
+{
+    content: '';
+    position: relative;
+    top: 25px;
+    left:0px ;
+    width:30%;
+    height:100%;
+    background: linear-gradient(to right,#AAFF00,transparent);
+    transform: skewX(45deg)translateX(0);
+
+} */
+.container .btn2:hover ::before
+{
+    transform:skewX(40deg) translateX(200%);
+}
+
+ion-icon{
+    
+    color:#023020;
+    font-size: 60px;
+    
+    padding-right: 7px; 
+}
+.container .btn2 a{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:#c0bda5;
+
+}
+
+
+.container .btn3
+{
+    width: 250px;
+    height: 250px;
+    background:#829986;
+    box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
+    border-top: 2px solid #2f5234;
+    border-left:2px solid #2f5234;
+    border-right:2px solid #2f5234;
+    border-bottom:2px solid #2f5234;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 82px;
+    color: rgb(227, 238, 234);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+}
+.container .btn3:hover
+{
+    letter-spacing: 3px;
+}
+/* .container .btn3::before
+{
+    content: '';
+    position: relative;
+    top: 25px;;
+    left:0px ;
+    width:30%;
+    height:100%;
+    background: linear-gradient(to right,#4aafa5,transparent);
+    transform: skewX(45deg)translateX(0);
+
+} */
+.container .btn3:hover ::before
+{
+    transform:skewX(45deg) translateX(200%);
+}
+
+ion-icon{
+    
+    color:#023020;
+    font-size: 50px;
+    
+    padding-right: -10px; 
+}
+.container .btn3 a{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:#c0bda5;
+
+}
+
+
+.container .btn4
+{
+    width: 250px;
+    height: 250px;
+    background:#829986;
+    box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
+    border-top: 2px solid #2f5234;
+    border-left:2px solid #2f5234;
+    border-right:2px solid #2f5234;
+    border-bottom:2px solid #2f5234;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 82px;
+    color: rgb(227, 238, 234);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+} 
+.container .btn4:hover
+{
+    letter-spacing: 3px;
+}
+/* .container .btn4::before
+{
+    content: '';
+    position: relative;
+    top: 25px;;
+    left:0px ;
+    width:30%;
+    height:100%;
+    background: linear-gradient(to right,#96DED1,transparent);
+    transform: skewX(45deg)translateX(0);
+
+} */
+.container .btn4:hover ::before
+{
+    transform:skewX(45deg) translateX(200%);
+}
+ion-icon{
+    
+    color:#023020;
+    font-size: 50px;
+     /* padding-top: 50px; */
+    padding-right: -12px; 
+}
+.container .btn4 a
+{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:#c0bda5;
+}
+
+
+

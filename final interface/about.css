@@ -1,0 +1,100 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+    
+}
+
+
+.scan
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scan .face
+{
+    position: relative;
+    width: 500px;
+    height: 275px;
+    background: url(img456.png);
+    background-size: 500px;
+}
+ .scan .face::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(bbbbb.jpg);
+    background-size: 500px;
+    animation: animate 6s ease-in-out infinite;
+}
+@keyframes animate
+{
+    0%,100%
+    {
+        height: 0%;
+    }
+    50%
+    {
+        height: 100%;
+    }
+}
+.scan .face::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgb(26, 209, 84);
+    border-radius: 8px;
+    filter:drop-shadow(0 0 20px rgb(26,209,84)) drop-shadow(0 0 60px rgb(26,209,84));
+    animation: animate_line 6s ease-in-out infinite;
+}
+@keyframes animate_line
+{
+    0%,100%
+    {
+        top: 0%;
+    }
+    50%
+    {
+        top: 100%;
+    }
+}
+.scan
+{
+    color:green;
+    font-size:20px;
+    letter-spacing: 3px;
+    filter:drop-shadow(0 0 2px rgb(26,209,84)) drop-shadow(0 0 5px rgb(26,209,84));
+    animation: animate_text 0.03ms steps(0) infinite;
+}
+@keyframes animate_text
+{
+    0%,100%
+    {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 5;
+    }
+}

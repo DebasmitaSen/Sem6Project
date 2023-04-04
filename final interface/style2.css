@@ -1,0 +1,164 @@
+.body
+{
+    background-color: #073f2c;
+}
+.table{
+    background-color:#829986;
+    text-align: center;
+    width: 1350px;
+    height:640px;
+    left: 30px;
+   
+    
+}
+.edit
+{
+    background-color:#032318;
+    margin-left: 150px;
+    width: 420px;
+    height:500px;
+    top:0;
+    margin-bottom: 10px;
+}
+.edit2
+{
+    
+    background-color:rgb(0, 0, 0) ;
+    margin-top: 14px;
+    margin: 35px;
+    height: 340px;
+    width: 350px;
+    top:0;
+    margin-bottom: 60px;
+}
+ .edit3
+{
+    height:10px;
+} 
+.mainContainer2
+{
+    position: relative;
+    width: 400px;
+    height:500px;
+    background:linear-gradient(145deg,#758a79,#8ba48f);
+    border: 4px solid #829986;
+    border-radius: 20px;
+    box-shadow:20px 20px 40px #657769,
+    -20px -20px 40px #9cada0;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.mainContainer2 .from-box 
+{
+    width: 100%;
+    padding: 40px;
+}
+.mainContainer2 .home
+{
+    position: absolute;
+    bottom: 0px;
+}
+
+.mainContainer2 .icon-close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:30px;
+    height:30px;
+    background: #495b4c;
+    font-size: 2em;
+    border: #073f2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.mainContainer2 .from-box h4{
+    font-family: Century Gothic;
+    background-color:#597058;
+    border-radius: 50px;
+    text-align:center;
+    padding: 40px;
+   
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: rgb(87, 201, 170);
+    box-shadow: 
+    23px 23px 45px #485b47,
+    -23px -23px 25px #6a8569;
+}
+.mainContainer2 .from-box .input-box
+{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #495b4c;
+}
+.input-box label
+{
+    position: absolute;
+    top: 50%;
+    right:5px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:rgb(10, 72, 52);
+    font-weight: 500;
+    pointer-events:none;
+    transition: 5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+    top: -5px;
+
+}
+
+ ion-icon
+{
+    font-size: 30px;
+    color: #073f2c;
+}
+.input-box input
+{
+    width:80%;
+    height: 100%;
+    background: transparent;
+    border:none;
+    outline: none;
+    text-align: left;
+    text-decoration:solid;
+    font-size: 16px;
+}
+
+.from-box button
+{
+    position: absolute;
+    width: 30%;
+    height: 6%;
+    left: 140px;
+    background: #495b46;
+    border: #495b46;
+    border-radius: 6px;
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
