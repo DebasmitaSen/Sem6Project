@@ -22,9 +22,9 @@ body
 {
     position: absolute;
     top: 4%;
-    left: 3%;
-    width: 1280px;
-    height: 35px;
+    left: 2%;
+    width: 97%;
+    height: 40px;
     background:#829990;
     border:0px  #829986;
     border-radius: 20px;
@@ -36,23 +36,13 @@ body
 }
 
 
-.nav-bar .icon-arrow
-{
-    position: absolute;
-    height: 50px;
-    right: 0%;
-    
-    display: flex;
-    align-items: right;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1;
-}
+
 
 
 .nav-bar h3
 {
-    position: absolute;
+    position:relative;
+    font-size: 25px;
     height: 22px;
     left: 10px;
     color: #023020;
@@ -63,7 +53,7 @@ body
 {
     position: absolute;
     bottom: 0%;
-    width: 1366px;
+    width: 100%;
     height: 60px;
     background:#032318;
     border:0px  #829986;
@@ -79,7 +69,7 @@ body
 .container
 {
     height: 250px;
-    width: 1110px;
+    width:100% ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -90,12 +80,13 @@ body
     
     width: 250px;
     height: 250px;
-    background:linear-gradient(145deg, #758a79, #8ba48f);;
+    background:linear-gradient(145deg, #758a81, #8ba48f);
     box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
     border-top: 2px solid #2f5234;
     border-left:2px solid #2f5234;
     border-right:2px solid #2f5234;
     border-bottom:2px solid #2f5234;
+    font-size:15px ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,23 +104,11 @@ body
 .container .btn1:hover
 {
     letter-spacing: 3px;
+    color: #092405;
+    box-shadow:2px 2px 30px #414a30,-2px -2px 0px #576440;
+    transition-delay: 0.0s;
 }
-/* .container .btn1::before
-{
-    content: '';
-    position: relative;
-    top: 30px;;
-    left:0px ;
-    width:10%;
-    height:100%;
-    background: linear-gradient(to right,#10544d,transparent);
-    transform: skewX(0deg)translateX(0);
 
-} */
-.container .btn1:hover ::before
-{
-    transform:skewX(40deg) translateX(200%);
-}
 
 ion-icon{
     
@@ -138,14 +117,7 @@ ion-icon{
      /* padding-top: 50px; */
     padding-right: -10px; 
 }
-.container .btn1 a{
-    text-decoration: none;
-    font-size: large;
-    padding-top: -20px;
-    font-weight: 600;
-    color:#c0bda5;
 
-}
 
 
 
@@ -155,18 +127,19 @@ ion-icon{
 {
     width: 250px;
     height: 250px;
-    background:#829986;
+    background:linear-gradient(145deg, #758a81, #8ba48f);
     box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
     border-top: 2px solid #2f5234;
     border-left:2px solid #2f5234;
     border-right:2px solid #2f5234;
     border-bottom:2px solid #2f5234;
+    font-size:15px ;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: hand;
     border-radius: 82px;
-    color: rgb(227, 238, 234);
+    color:  #c0bda5;
     z-index: 1;
     font-weight: 400;
     letter-spacing: 1px;
@@ -177,24 +150,13 @@ ion-icon{
 }
 .container .btn2:hover
 {
+    
     letter-spacing: 3px;
+    color: #092405;
+    box-shadow:2px 2px 30px #414a30,-2px -2px 0px #576440;
+    transition-delay: 0.0s;
 }
-/* .container .btn2::before
-{
-    content: '';
-    position: relative;
-    top: 25px;
-    left:0px ;
-    width:30%;
-    height:100%;
-    background: linear-gradient(to right,#AAFF00,transparent);
-    transform: skewX(45deg)translateX(0);
 
-} */
-.container .btn2:hover ::before
-{
-    transform:skewX(40deg) translateX(200%);
-}
 
 ion-icon{
     
@@ -217,18 +179,19 @@ ion-icon{
 {
     width: 250px;
     height: 250px;
-    background:#829986;
+    background:linear-gradient(145deg, #758a81, #8ba48f);
     box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
     border-top: 2px solid #2f5234;
     border-left:2px solid #2f5234;
     border-right:2px solid #2f5234;
     border-bottom:2px solid #2f5234;
+    font-size:15px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: hand;
     border-radius: 82px;
-    color: rgb(227, 238, 234);
+    color: #c0bda5;
     z-index: 1;
     font-weight: 400;
     letter-spacing: 1px;
@@ -239,24 +202,13 @@ ion-icon{
 }
 .container .btn3:hover
 {
+    
     letter-spacing: 3px;
+    color: #092405;
+    box-shadow:2px 2px 30px #414a30,-2px -2px 0px #576440;
+    transition-delay: 0.0s;
 }
-/* .container .btn3::before
-{
-    content: '';
-    position: relative;
-    top: 25px;;
-    left:0px ;
-    width:30%;
-    height:100%;
-    background: linear-gradient(to right,#4aafa5,transparent);
-    transform: skewX(45deg)translateX(0);
 
-} */
-.container .btn3:hover ::before
-{
-    transform:skewX(45deg) translateX(200%);
-}
 
 ion-icon{
     
@@ -279,18 +231,19 @@ ion-icon{
 {
     width: 250px;
     height: 250px;
-    background:#829986;
+    background:linear-gradient(145deg, #758a81, #8ba48f);
     box-shadow:-18px 18px 20px #697c6d,18px -18px 20px #9bb69f;
     border-top: 2px solid #2f5234;
     border-left:2px solid #2f5234;
     border-right:2px solid #2f5234;
     border-bottom:2px solid #2f5234;
+    font-size:15px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: hand;
     border-radius: 82px;
-    color: rgb(227, 238, 234);
+    color: #c0bda5;
     z-index: 1;
     font-weight: 400;
     letter-spacing: 1px;
@@ -302,23 +255,11 @@ ion-icon{
 .container .btn4:hover
 {
     letter-spacing: 3px;
+    color: #092405;
+    box-shadow:2px 2px 30px #414a30,-2px -2px 0px #576440;
+    transition-delay: 0.0s;
 }
-/* .container .btn4::before
-{
-    content: '';
-    position: relative;
-    top: 25px;;
-    left:0px ;
-    width:30%;
-    height:100%;
-    background: linear-gradient(to right,#96DED1,transparent);
-    transform: skewX(45deg)translateX(0);
 
-} */
-.container .btn4:hover ::before
-{
-    transform:skewX(45deg) translateX(200%);
-}
 ion-icon{
     
     color:#023020;

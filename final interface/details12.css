@@ -10,8 +10,8 @@ body
     display: flex;
     justify-content: right;
     align-items: center;
-    width: 900px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     min-height: 100vh;
     background:#829986;
 }
@@ -22,9 +22,8 @@ body
     background: #ffffff;
     box-shadow: #e3e7c5;
     height: 350px;
-    width:300px;
-    margin-right: 290px;
-    
+    width:350px;
+    margin-right: 750px;
 }
 
 .search-box input
@@ -32,7 +31,7 @@ body
     position: absolute;
     top: 8%;
     left: 2%;
-    width: 400px;
+    width: 600px;
     height: 40px;
     background: rgb(165, 215, 199);
     border:1px solid #829986;
@@ -49,7 +48,7 @@ body
     top: 0%;
     left: 0%;
     margin-top: 55px;
-    margin-left: 385px;
+    margin-left: 580px;
     font-size: 2em;
     cursor: pointer;
     z-index: 1;
@@ -96,8 +95,8 @@ ion-icon
 .edit8
 {
     background: #c5c9ab;
-    height: 40px;
-    width: 400px;
+    height: 60px;
+    width: 600px;
     float: right;
     font-size: 18px;
     font-weight: lighter;
@@ -117,8 +116,8 @@ ion-icon
 .edit9
 {
     background: #c5c9ab;
-    height: 40px;
-    width: 400px;
+    height: 60px;
+    width: 600px;
     float: right;
     font-size: 18px;
     font-weight: lighter;
@@ -136,8 +135,8 @@ ion-icon
 .edit16
 {
     background: #c5c9ab;
-    height: 40px;
-    width: 400px;
+    height: 60px;
+    width: 600px;
     float: right;
     font-size: 18px;
     font-weight: lighter;

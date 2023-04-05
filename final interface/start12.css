@@ -5,9 +5,9 @@
 .table{
     background-color: #829986;
     text-align: center;
-    width: 1350px;
-    height: 640px;
-    left:30px;
+    width: 100%;
+    height: 700px;
+    left:40px;
 }
 .edit{
     background-color: #032318;

@@ -1,13 +1,15 @@
-.body
+ .body
 {
     background-color: #073f2c;
-}
+} 
 .table{
     background-color:#829986;
-    text-align: center;
-    width: 1350px;
-    height:640px;
-    left: 30px;
+    
+    
+    
+    width: 100%;
+    height:700px;
+     left: 30px; 
    
     
 }
@@ -62,7 +64,7 @@
     bottom: 0px;
 }
 
-.mainContainer2 .icon-close
+/* .mainContainer2 .icon-close
 {
     position: absolute;
     top: 0;
@@ -77,9 +79,9 @@
     justify-content: center;
     border-bottom-left-radius: 15px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 1; }*/
 
-}
+
 
 .mainContainer2 .from-box h4{
     font-family: Century Gothic;

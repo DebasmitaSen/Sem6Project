@@ -12,7 +12,7 @@
     
     <div class ="nav-bar">
         <h3>ATTENDANCE SYSTEM</h3>
-        <span class="icon-arrow"><ion-icon name="arrow-forward-outline" ></ion-icon></span>
+        
        </div>
        <br><br>
        
@@ -21,10 +21,35 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <div class="container">
-            <div class="btn1"><ion-icon name="people-circle"></ion-icon><a href="About.html">About us</a></div>  
-            <div class="btn2"><ion-icon name="add-circle"></ion-icon><a href="database.html">Update</a></div>
-            <div class="btn3"><ion-icon name="reader"></ion-icon><a href="show.html">Details</a></div>
-            <div class="btn4"><ion-icon name="camera"></ion-icon><a href="Attendance.html">Start</a></div>
+        
+            <button onclick="btn1()" class="btn1"><ion-icon name="people-circle"></ion-icon>About us</button>
+            <script>
+                function btn1(){
+                    document.location.href="About.html";
+                }
+            </script>  
+
+            <button onclick="btn2()" class="btn2"><ion-icon name="add-circle"></ion-icon>Update</button>
+            <script>
+                function btn2(){
+                    document.location.href="update.html";
+                }
+            </script>  
+
+            <button onclick="btn3()" class="btn3"><ion-icon name="reader"></ion-icon>Details</button>
+            <script>
+                function btn3(){
+                    document.location.href="Details.html";
+                }
+            </script>  
+
+            <button onclick="btn4()" class="btn4"><ion-icon name="camera"></ion-icon>Strat</button>
+            <script>
+                function btn4(){
+                    document.location.href="start.html";
+                }
+            </script>  
+            
     </div>
     <div class="downbar">
         <h3>. github</h3>
