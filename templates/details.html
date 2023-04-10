@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowAttandance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'details.css') }}">
+
+</head>
+<body>
+
+    <div class="photo">
+        <img src="{{ image }}" class = "photo">
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <div class ="search-box"><form method="post">
+        <input type="text" placeholder="search by id" name = 'id' required>
+        <button class="icon-search" type = "submit"><ion-icon name="search-outline"></ion-icon></button>
+        </form></div>
+        
+        <span class="home">
+        <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
+        </span>
+        
+        <form>
+            <h2 class="edit7">
+                <div class="edit8">NAME: {{ name }}</div>
+                 <br><br><br>
+                <div class="edit9">ID: {{ id }}</div>
+                <br><br><br>
+                <div class="edit16">Total Attandance: {{ attendence }}</div>
+                <br>
+                
+            </h2>
+        </form> 
+        {% if no_data %}
+        <script>
+            alert("No attendence found for the student");
+        </script>
+        {% endif %}
+
+
+
+</body>
+</html>
+
