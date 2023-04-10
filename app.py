@@ -28,14 +28,15 @@ def details():
     id = '' 
     name = ''
     total_attendence = ''
-    image = url_for('static', filename = 'picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.webp')
+    image = url_for('static', filename = 'person.webp')
     if(request.method == 'POST') :       
         id = request.form['id']
         connection = db_conn.create_db_connection('localhost', 'root', '', 'person')
         query = "select name, total_att from total_attendence where id = %s"
         results = db_execute_query.read_query(connection, query, id)
         if not results:
-            return render_template('details.html', no_data = True)
+            image = url_for('static', filename = 'person.webp')
+            return render_template('details.html', no_data = True, image = image)
         
         for row in results:
             name, total_attendence = row
@@ -53,5 +54,3 @@ def start():
 
 if __name__ == '__main__' :
     app.run(debug=True)
-
-
