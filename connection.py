@@ -19,10 +19,10 @@ cursor = db.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS images (id INT(15), Name VARCHAR(255),Image VARCHAR(250),PRIMARY KEY(id) )")
 
 
-##folder_path = "D:/Face recognization project/Sem6Project/Input/"
-##parent_dir="D:/Face recognization project/Sem6Project/Data/"
-folder_path = "C:/Users/mouli/Documents/GitHub/Sem6Project/Input"
-parent_dir="C:/Users/mouli/Documents/GitHub/Sem6Project/Data"
+folder_path = "D:/Face recognization project/Sem6Project/Input/"
+parent_dir="D:/Face recognization project/Sem6Project/Data/"
+# folder_path = "C:/Users/mouli/Documents/GitHub/Sem6Project/Input"
+# parent_dir="C:/Users/mouli/Documents/GitHub/Sem6Project/Data"
 
 image_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
@@ -44,10 +44,11 @@ for filename in image_files:
         Iddir_path=os.path.join(parent_dir,img_id[1])
         if not os.path.isdir(Iddir_path):
            os.makedirs(Iddir_path)
-        
+        img_path = 'Data/'
+        img_path = img_path + Id
         try:
           query = "INSERT INTO images (id,Name,Image) VALUES (%s,%s,%s)"
-          values = (Id,name,Iddir_path)
+          values = (Id,name,img_path)
           cursor.execute(query, values)
           db.commit()
         except:

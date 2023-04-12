@@ -15,23 +15,7 @@
                 <div class="edit">
                     <h6 class="edit3"></h6>
                     <div class="edit2">
-                        <video class="video" id="videoElement" autoplay="true"></video>
-                        <script>
-                            let video = document.querySelect("#videoElement");
-                            if(navigator.mediaDevices.getUserMedia)
-                            {
-                                navigator.mediaDevices.getUserMedia({video: true})
-                                .then(function(stream){
-                                    video.srcObject=stream
-                                })
-                                .catch(function(error)
-                                {
-                                    console.log("something went wrong");
-                                })
-                            }else {
-                                console.log("getusermedia not supported");
-                            }
-                        </script>
+                        <img class = 'video' src="{{ url_for('video_feed') }}">
                     </div>
                 </div>
             </td>

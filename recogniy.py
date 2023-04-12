@@ -70,11 +70,13 @@ encoded_face_train = findEncodings(imagelist)
 
 ###### take pictures from device
 def recogniseImg():
-    cap  = cv2.VideoCapture("http://100.81.178.96:4747/video?640x480")
-##    cap  = cv2.VideoCapture(0)
+    # cap  = cv2.VideoCapture("http://100.81.178.96:4747/video?640x480")
+    cap  = cv2.VideoCapture(0)
     while True:
         success, img = cap.read()
-        if success:
+        if not success:
+            break
+        else:
             imgS = cv2.resize(img, (0,0), None, 0.25,0.25)
             imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
             faces_in_frame = face_recognition.face_locations(imgS)
@@ -95,6 +97,7 @@ def recogniseImg():
                     cv2.putText(img,"Detected", (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
                     #call mark attendance
                     attendence.markAttendance(iD)
+                    print(iD, name)
                 else:
                     y1,x2,y2,x1 = faceloc
                     # since we scaled down by 4 times
@@ -102,14 +105,14 @@ def recogniseImg():
                     cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
                     cv2.rectangle(img, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
                     cv2.putText(img,"Unrecognizable", (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,0.50,(0,0,255),2)
-              
+                return (iD, name)
                     
-            cv2.imshow('webcam', img)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-        else:
-             print("No image detected. Please! try again")
+            # cv2.imshow('webcam', img)
+            # if cv2.waitKey(1) & 0xFF == ord('q'):
+            
+    
+    cap.release()
 
 
 
-recogniseImg()
+# recogniseImg()

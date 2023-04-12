@@ -12,18 +12,17 @@
 .edit{
     background-color: #032318;
     margin-left: 150px;
-    width: 420px;
+    width: 620px;
     height: 500px;
     top: 0;
     margin-bottom: 10px;
 }
 .edit2{
-    background-color: rgb(255, 255, 255);
+    background-color: #032318;
     margin-top: 14px;
     margin: 35px;
     height: 340px;
-    width: 350px;
-    /* align-content: center; */
+    width: 550px;
     margin-bottom: 60px;
 }
 .edit3{
@@ -140,5 +139,5 @@ ion-icon
 }
 .video{
     width: 550px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
 }

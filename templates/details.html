@@ -24,7 +24,6 @@
         <span class="home">
         <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
         </span>
-        
         <form>
             <h2 class="edit7">
                 <div class="edit8">NAME: {{ name }}</div>
@@ -35,7 +34,7 @@
                 <br>
                 
             </h2>
-        </form> 
+        </form>
         {% if no_data %}
         <script>
             alert("No student found for the ID");

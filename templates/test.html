@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'start.css') }}">
+  </head>
+  <body>
+    <h1>Flask Example</h1>
+    <div id="data"></div>
+    <script>
+      $(document).ready(function() {
+        // This code runs after the page is fully loaded
+        $.get('/get_data', function(data) {
+          // This code runs when the server responds with data
+          $('#data').html(`<div class="edit4"><br><br>
+                            <span class="home">
+                                <a href="{{ url_for('home') }}"><ion-icon name="home-outline"></ion-icon></a>
+                            </span>
+                            
+
+                                <h1 class="edit5">Attendance recorded!!</h1>
+                                <p class="edit6"></p>
+                                
+                                <h4 class="Att-form">Total Attendance:-{{ attendence }}</h4>
+                                <p class="edit6"></p><br>
+
+
+                                <form>
+                                    <h2 class="edit7">
+                                        <ion-icon name="person-outline"></ion-icon><div class="edit8">NAME: ` + data[1]+`
+                                            
+                                        </div><br><p class="edit11"></p> 
+
+                                        <ion-icon name="albums-outline"></ion-icon><div class="edit8">ID: `+ data[0]+`
+                                            
+                                        </div>
+                                        <br><br>
+                                        
+                                    </h2>
+                                </form></div>`);
+        });
+      });
+    </script>
+  </body>
+</html>

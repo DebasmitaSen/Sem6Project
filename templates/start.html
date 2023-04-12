@@ -15,7 +15,7 @@
                 <div class="edit">
                     <h6 class="edit3"></h6>
                     <div class="edit2">
-                        <video class = 'video' id="video" autoplay></video>
+                        <!-- <video class = 'video' id="video" autoplay></video>
                         <script>
                         var video = document.querySelector("#video");
 
@@ -28,8 +28,8 @@
                                 console.log("Error: " + error);
                             });
                         }
-                        </script>
-                        
+                        </script> -->
+                        <img class = 'video' src="{{ url_for('video_feed') }}">
                     </div>
                 </div>
             </td>
@@ -42,27 +42,28 @@
                     </span>
                     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
                      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+                        {% if recognized %}
                         <h1 class="edit5">Attendance recorded!!</h1>
                         <p class="edit6"></p>
-
-                        <h4 class="Att-form">Total Attendance:-</h4>
+                        
+                        <h4 class="Att-form">Total Attendance:-{{ attendence }}</h4>
                         <p class="edit6"></p><br>
 
 
                         <form>
                             <h2 class="edit7">
-                                <ion-icon name="person-outline"></ion-icon><div class="edit8">NAME:
+                                <ion-icon name="person-outline"></ion-icon><div class="edit8">NAME: {{ name }}
                                     
                                  </div><br><p class="edit11"></p> 
 
-                                <ion-icon name="albums-outline"></ion-icon><div class="edit8">ID:
+                                <ion-icon name="albums-outline"></ion-icon><div class="edit8">ID: {{ id }}
                                     
                                 </div>
                                 <br><br>
                                 
                             </h2>
-                        </form>   
+                        </form> 
+                        {% endif %}  
                     </div>
                 </td>
             </tr>

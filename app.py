@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, send_from_directory, url_for
+from flask import Flask, render_template, request, send_from_directory, url_for, Response
 import db_conn
 import db_execute_query
-
+from imgcapture import imcapture
+# from recogniy import recogniseImg
+import cv2
 
 # Create a Flask Instance
 app = Flask(__name__)
@@ -18,8 +20,15 @@ def home():
 def about():
     return render_template('about.html')
 
+camera = cv2.VideoCapture(0)
+
 @app.route("/update", methods = ['GET', 'POST'])
 def update():
+
+    if (request.method == 'POST'):
+        id = request.form['id']
+        name = request.form['name']
+        imcapture(id, name, camera)
     return render_template('update.html')
 
 
@@ -44,13 +53,37 @@ def details():
         path_1st_image = '/img1.jpg'
         path_1st_image = id + path_1st_image
         image = url_for('data', filename = path_1st_image)
-        
-    return render_template('details.html', id = id, name = name, attendence = total_attendence, image = image)
+        return render_template('details.html', id = id, name = name, attendence = total_attendence, image = image)
+    
+    return render_template('details.html', image = image)
 
+def generate_frames(camera):
+    while True:
+        success, frame = camera.read()
+        if not success:
+            break
+        else:
+            # do face recognition here
+            # draw a rectangle around the detected face(s) on the frame
+            # convert the frame to bytes for streaming
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+@app.route('/video_feed')
+def video_feed():
+    # camera = cv2.VideoCapture(0)
+    return Response(generate_frames(camera),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route("/start")
 def start():
-    return render_template('start.html')
+    total_attendence = ''
+    name = ''
+    id = ''
+    # id, name = recogniseImg()
+    return render_template('start.html', attendence = total_attendence, name = name, id = id, recognized = True)
 
 if __name__ == '__main__' :
     app.run(debug=True)
