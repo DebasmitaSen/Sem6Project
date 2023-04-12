@@ -81,11 +81,8 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route("/start")
-def start():
-    total_attendence = ''
-    name = ''
-    id = ''  
-    return render_template('start.html', attendence = total_attendence, name = name, id = id)
+def start(): 
+    return render_template('start.html')
 
 @app.route('/get_data')
 def get_data():
