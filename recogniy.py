@@ -9,66 +9,58 @@ import attendence
 #code to connect to database and collect images and the id of student
 #array name must be 'images'
 #array for id must be 'classID'
-arrays = connection.retrive()
-classID=arrays[0]
-names=arrays[1]
-images=arrays[2]
-name1=names
-cid=classID
-name2=[]
-classid=[]
-for i in range(len(name1)):
-    for j in range(5):
-        name2.append(name1[i])
-        classid.append(cid[i])
+def getArray():
+    arrays = connection.retrive()
+    classID=arrays[0]
+    names=arrays[1]
+    images=arrays[2]
+    name1=names
+    cid=classID
+    name2=[]
+    classid=[]
+    for i in range(len(name1)):
+        for j in range(5):
+            name2.append(name1[i])
+            classid.append(cid[i])
+    data=[images,name2,classid]
+    return data 
+
 def findEncodings(image):
     encodeList = []
     for img in image:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-##        cv2.imshow('img',img)
-##        cv2.waitKey(300)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)    
         encoded_face = face_recognition.face_encodings(img)[0]
         encodeList.append(encoded_face)
     return encodeList
 
-list1=images
-var="/img"
-count=1
-list2=[]
-list3=[]
-for i in  range (1,6):
-    cn="%s"%i
-    var2=var+cn+".jpg"
-    #i=i+1
-    list2.append(var2)
-for i in range (len(list1)):
-    for j in range (len(list2)):
-        var3=list1[i]+list2[j]
-        list3.append(var3)
-imagelist=[]
-##print(list1)
-##print(list2)
-##print(list3)
-##path=list3[0]
-##print(path)
-##for i in range(len(list3)):
-for i in range(15):
-    path=list3[i]
-    imgx=cv2.imread(path)
-    imagelist.append(imgx)
-##    cv2.imshow('img',imagelist[i])
-##    cv2.waitKey(300)
-##for i in range(len(imagelist)):    
-##    img=cv2.imread(path)
-##    cv2.imshow('img',img) 
-##    cv2.waitKey(0)
 
-encoded_face_train = findEncodings(imagelist)
+def createImg():
+    getdata=getArray()
+    list1=getdata[0]
+    var="/img"
+    count=1
+    list2=[]
+    list3=[]
+    for i in  range (1,6):
+        cn="%s"%i
+        var2=var+cn+".jpg"
+        #i=i+1
+        list2.append(var2)
+    for i in range (len(list1)):
+        for j in range (len(list2)):
+            var3=list1[i]+list2[j]
+            list3.append(var3)
+    imagelist=[]
+
+    for i in range(15):
+        path=list3[i]
+        imgx=cv2.imread(path)
+        imagelist.append(imgx)
 
 
-#code to add attendance to the database according to the id sent as match
-# def markAttendance(ID):
-#     pass
+    encoded_face_train = findEncodings(imagelist)
+    return encoded_face_train
+
 
 
 ###### take pictures from device
@@ -80,6 +72,7 @@ def recogniseImg():
         if not success:
             break
         else:
+            encoded_face_train=createImg()
             imgS = cv2.resize(img, (0,0), None, 0.25,0.25)
             imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
             faces_in_frame = face_recognition.face_locations(imgS)
@@ -89,7 +82,12 @@ def recogniseImg():
                 faceDist = face_recognition.face_distance(encoded_face_train, encode_face)
                 matchIndex = np.argmin(faceDist)
                 print(matchIndex)
+                
                 if matches[matchIndex]:
+                    getdata1=getArray()
+                    name2=getdata1[1]
+                    classid=getdata1[2]
+                    
                     name= name2[matchIndex]
                     iD = classid[matchIndex]
                     y1,x2,y2,x1 = faceloc
@@ -110,8 +108,7 @@ def recogniseImg():
                     cv2.putText(img,"Unrecognizable", (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,0.50,(0,0,255),2)
                 return (iD, name)
                     
-            # cv2.imshow('webcam', img)
-            # if cv2.waitKey(1) & 0xFF == ord('q'):
+           
             
     
     cap.release()
