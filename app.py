@@ -3,6 +3,7 @@ import db_conn
 import db_execute_query
 from imgcapture import imcapture
 # from recogniy import recogniseImg
+import connection
 import cv2
 
 # Create a Flask Instance
@@ -29,6 +30,8 @@ def update():
         id = request.form['id']
         name = request.form['name']
         imcapture(id, name, camera)
+        connection.insert_to_db()
+        connection.crbk()
     return render_template('update.html')
 
 

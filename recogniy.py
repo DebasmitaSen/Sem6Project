@@ -9,9 +9,12 @@ import attendence
 #code to connect to database and collect images and the id of student
 #array name must be 'images'
 #array for id must be 'classID'
-
-name1=connection.names
-cid=connection.classID
+arrays = connection.retrive()
+classID=arrays[0]
+names=arrays[1]
+images=arrays[2]
+name1=names
+cid=classID
 name2=[]
 classid=[]
 for i in range(len(name1)):
@@ -28,7 +31,7 @@ def findEncodings(image):
         encodeList.append(encoded_face)
     return encodeList
 
-list1=connection.images
+list1=images
 var="/img"
 count=1
 list2=[]

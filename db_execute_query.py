@@ -25,3 +25,13 @@ def read_query(conn, query, val) :
         return result
     except Error as error:
         print(f"Error : '{error}'")
+
+def read_query_(conn, query) :
+    cursor = conn.cursor()
+    result = None
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as error:
+        print(f"Error : '{error}'")
