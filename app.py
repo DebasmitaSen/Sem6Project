@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_from_directory, url_for,
 import db_conn
 import db_execute_query
 from imgcapture import imcapture
-# from recogniy import recogniseImg
+from recogniy import recogniseImg
 import connection
 import cv2
 
@@ -84,9 +84,20 @@ def video_feed():
 def start():
     total_attendence = ''
     name = ''
-    id = ''
-    # id, name = recogniseImg()
-    return render_template('start.html', attendence = total_attendence, name = name, id = id, recognized = True)
+    id = ''  
+    return render_template('start.html', attendence = total_attendence, name = name, id = id)
+
+@app.route('/get_data')
+def get_data():
+    id, name = recogniseImg(camera)
+    connection = db_conn.create_db_connection('localhost', 'root', '', 'person')
+    query = "select total_att from total_attendence where id = %s"
+    results = db_execute_query.read_query(connection, query, id)
+    connection.close()
+    for row in results:
+        total_attendence = row
+    data = [id, name, total_attendence]
+    return data
 
 if __name__ == '__main__' :
     app.run(debug=True)

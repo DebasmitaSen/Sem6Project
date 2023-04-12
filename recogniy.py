@@ -1,5 +1,4 @@
 import cv2
-import dlib
 import face_recognition
 import numpy as np
 import connection
@@ -62,9 +61,8 @@ def createImg():
 
 
 ###### take pictures from device
-def recogniseImg():
-    # cap  = cv2.VideoCapture("http://100.81.178.96:4747/video?640x480")
-    cap  = cv2.VideoCapture(0)
+def recogniseImg(cap):
+
     getdata1=getArray()
     name2=getdata1[1]
     classid=getdata1[2]
@@ -93,7 +91,7 @@ def recogniseImg():
                     cv2.rectangle(img, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
                     cv2.putText(img,"Detected", (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
                     #call mark attendance
-                    # attendence.markAttendance(iD)
+                    attendence.markAttendance(iD)
                     print(iD, name)
                 else:
                     y1,x2,y2,x1 = faceloc
@@ -102,16 +100,12 @@ def recogniseImg():
                     cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
                     cv2.rectangle(img, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
                     cv2.putText(img,"Unrecognizable", (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,0.50,(0,0,255),2)
-                # return (iD, name)
-            cv2.imshow('webcam', img)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+                return (iD, name)
+            # cv2.imshow('webcam', img)
+            # if cv2.waitKey(1) & 0xFF == ord('q'):
+            #     break
               
-           
-            
-    
-    cap.release()
 
 
 
-recogniseImg()
+# recogniseImg()

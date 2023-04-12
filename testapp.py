@@ -1,39 +1,39 @@
-from flask import Flask, render_template, Response
-import cv2
+# from flask import Flask, render_template, Response
+# import cv2
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 
 
-def generate_frames(camera):
-    while True:
-        success, frame = camera.read()
-        if not success:
-            break
-        else:
-            # do face recognition here
-            # draw a rectangle around the detected face(s) on the frame
-            # convert the frame to bytes for streaming
-            ret, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+# def generate_frames(camera):
+#     while True:
+#         success, frame = camera.read()
+#         if not success:
+#             break
+#         else:
+#             # do face recognition here
+#             # draw a rectangle around the detected face(s) on the frame
+#             # convert the frame to bytes for streaming
+#             ret, buffer = cv2.imencode('.jpg', frame)
+#             frame = buffer.tobytes()
+#             yield (b'--frame\r\n'
+#                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
-@app.route('/')
-def home():
-    return render_template('update.html')
+# @app.route('/')
+# def home():
+#     return render_template('update.html')
 
-@app.route('/video_feed')
-def video_feed():
-    camera = cv2.VideoCapture(0)
-    return Response(generate_frames(camera),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+# @app.route('/video_feed')
+# def video_feed():
+#     camera = cv2.VideoCapture(0)
+#     return Response(generate_frames(camera),
+#                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/start')
-def start():
-    return render_template('start.html')
-if __name__ == '__main__' :
-    app.run(debug=True)
+# @app.route('/start')
+# def start():
+#     return render_template('start.html')
+# if __name__ == '__main__' :
+#     app.run(debug=True)
 
 # from flask import Flask, render_template
 
@@ -51,5 +51,53 @@ if __name__ == '__main__' :
 #     data = [id, name]
 #     return data
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+
+from flask import Flask, request, jsonify
+import time
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '''
+        <html>
+        <head>
+            <title>Call Python function from HTML</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                function call_python_function() {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/call_function',
+                        success: function(data) {
+                            $("#result").html(data);
+                        },
+                        complete: function() {
+                            // Schedule the next request when the current one's complete
+                            setTimeout(call_python_function, 1000);
+                        }
+                    });
+                }
+                $(document).ready(function() {
+                    call_python_function();
+                });
+            </script>
+        </head>
+        <body>
+            <h1>Python function result:</h1>
+            <div id="result"></div>
+        </body>
+        </html>
+    '''
+
+@app.route('/call_function')
+def call_function():
+    result = my_function() # Replace my_function with the actual function you want to call
+    return jsonify(result=result)
+
+def my_function():
+    # Replace this with your actual function code
+    return time.ctime()
+
+if __name__ == '__main__':
+    app.run(debug=True)
