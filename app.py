@@ -89,13 +89,13 @@ def start():
 
 @app.route('/get_data')
 def get_data():
-    id, name = recogniseImg(camera)
+    id = recogniseImg(camera)
     connection = db_conn.create_db_connection('localhost', 'root', '', 'person')
-    query = "select total_att from total_attendence where id = %s"
+    query = "select name, total_att from total_attendence where id = %s"
     results = db_execute_query.read_query(connection, query, id)
     connection.close()
     for row in results:
-        total_attendence = row
+        name, total_attendence = row
     data = [id, name, total_attendence]
     return data
 
