@@ -84,6 +84,7 @@ def recogniseImg(cap):
                 #call mark attendance
                 attendence.markAttendance(iD)
                 print(iD, name)
+                return (iD)
             else:
                 y1,x2,y2,x1 = faceloc
                 # since we scaled down by 4 times
@@ -91,7 +92,6 @@ def recogniseImg(cap):
                 cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
                 cv2.rectangle(img, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
                 cv2.putText(img,"Unrecognizable", (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,0.50,(0,0,255),2)
-            return (iD)
             # cv2.imshow('webcam', img)
             # if cv2.waitKey(1) & 0xFF == ord('q'):
             #     break
