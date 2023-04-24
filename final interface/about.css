@@ -27,7 +27,9 @@ ion-icon{
 
 .scan
 {
-    position: relative;
+    position: absolute;
+    top:25%;
+    left:500px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -106,4 +108,163 @@ ion-icon{
     {
         opacity: 5;
     }
+}
+
+.section{
+    min-height: 100vh;
+}
+
+.section .rajdeep
+{
+    position: absolute;
+    top: 53%;
+    right:7%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style: initial;
+    color: chartreuse;
+    padding-bottom: 15px;
+}
+
+.section .rajdeep img
+{
+    position: absolute;
+    top: 100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid chartreuse;
+    padding: 6px;
+}
+
+
+
+.section .Debasmita
+{
+    position: absolute;
+    top: 2%;
+    right:6%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style: initial;
+    color: chartreuse;
+    padding-bottom: 15px;
+}
+
+.section .Debasmita img
+{
+    position: absolute;
+    top:100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid chartreuse;
+    padding: 6px;
+}
+
+
+
+.section .rahul
+{
+    position: absolute;
+    top: 27%;
+    right:9%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style:initial;
+    color: chartreuse;
+    padding-bottom: 15px;
+}
+
+.section .rahul img
+{
+    position: absolute;
+    top: 100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid chartreuse;
+    padding: 6px;
+}
+
+
+.section .romit
+{
+    position: absolute;
+    top: 78%;
+    right:2%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style:initial;
+    color: chartreuse;
+    
+    padding-bottom: 15px;
+    
+}
+.section .romit img
+{
+    position: absolute;
+    top: 100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid chartreuse;
+    padding: 6px;
+}
+
+.aa
+{
+    position: absolute;
+    top:2%;
+    left:4%;
+    font-size: 20px;
+    color: chartreuse;
+    background-color: rgb(255, 255, 255); /* Fallback color */
+    background-color: rgba(14, 154, 23, 0.4);
+    color: rgb(252, 252, 252);
+    font-weight: bold;
+    border: 3px solid #2bc80f;
+    width:32px;
+
+}
+
+.text
+{
+    position:absolute;
+    top:6%;
+    right:62%;
+    color: azure;
+    padding: 60px;
+   
+    word-spacing: 2px;
+    font-size: 20px;
+}
+
+
+.devel
+{
+    position: absolute;
+    top:6%;
+    right:20%;
+    background-color: rgb(103, 12, 12);
+    background-color: rgba(18, 228, 32, 0.4);
+    color: rgb(252, 252, 252);
+    font-weight: 100;
+    font-size: 15px;
+    flood-color: #2bc80f;
+    border: 1px #2bc80f;
+    border-radius: 10px;
+   
 }

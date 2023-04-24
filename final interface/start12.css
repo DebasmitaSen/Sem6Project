@@ -1,20 +1,24 @@
 .body
 {
-    background-color: #073f2c;
+    display:flex;
+    height:100%;
+    width:100%;
+    background:#709c95;
 }
 .table{
-    background-color: #829986;
+    background-color:#709c95 ;
     text-align: center;
     width: 100%;
-    height: 700px;
+    height: 100%;
     left:40px;
 }
 .edit{
-    background-color: #032318;
+    position: absolute;
+    top: 10%;
+    background-color: #709c70;
     margin-left: 150px;
     width: 420px;
     height: 500px;
-    top: 0;
     margin-bottom: 10px;
 }
 .edit2{
@@ -29,10 +33,14 @@
     height: 5px;
 }
 .edit4{
-    background: linear-gradient(145deg,#758a79,#8ba48f);
+    position:absolute;
+    top:10%;
+    left:60%;
+    background:#719284;
     box-shadow: 
-    20px 20px 40px #657769,
-    -20px -20px 40px #9cada0;
+    -5px -5px 29px #466966, 5px 5px 29px #75aea9;
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     height: 520px;
     width: 420px;
     border-radius: 20px;
@@ -71,9 +79,9 @@
 .home
 {
 
-    position: relative;
-    top: 0px;
-    right: 0px;
+    position:absolute;
+    top: 88%;
+    right:45%;
     margin-bottom:70px;
     cursor: pointer;
 }
@@ -81,7 +89,7 @@
 ion-icon
 {
     font-size: 30px;
-    color: #032318;
+    color: #073f2c;
 }
 
 .edit7{
@@ -99,6 +107,7 @@ ion-icon
     float: right;
     font-size: 18px;
     font-weight: lighter;
+    line-height: 32px;
     border-radius: 20px;
     margin-left: 10px;
     padding-left: 10px;
