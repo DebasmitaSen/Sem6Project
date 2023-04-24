@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2023 at 06:17 PM
+-- Generation Time: Apr 24, 2023 at 06:19 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -73,9 +73,9 @@ CREATE TABLE `total_attendence` (
 --
 
 INSERT INTO `total_attendence` (`id`, `name`, `total_att`) VALUES
-(3, 'Rahul', 2),
-(14, 'debu', 6),
-(20, 'rajdip', 4),
+(3, 'Rahul', 0),
+(14, 'debu', 0),
+(20, 'rajdip', 0),
 (43, 'Romit', 0);
 
 --
