@@ -30,10 +30,10 @@ ion-icon{
 {
     position: absolute;
     top:25%;
-    left:400px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 .scan .face
