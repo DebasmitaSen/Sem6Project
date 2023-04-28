@@ -1,0 +1,217 @@
+ .body
+{
+    display:flex;
+    height:100%;
+    width:100%;
+    background-color:#16796f;
+} 
+.table{
+    background-color:#16796f ;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left:40px; 
+   
+    
+}
+.edit
+{
+    position: absolute;
+    background-color:rgba(12, 75, 68, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(15.5px);
+    -webkit-backdrop-filter: blur(15.5px);
+    border-radius: 10px;
+    border: 0px solid rgba(255,255,255,0.18);
+     margin-left: 150px; 
+    width: 420px;
+    height:500px;
+    top:10%;
+    margin-bottom: 10px;
+}
+.edit2
+{
+    
+    background-color:rgb(0, 0, 0) ;
+    margin-top: 14px;
+    margin: 35px;
+    height: 340px;
+    width: 350px;
+    margin-bottom: 60px;
+}
+ .edit3
+{
+    height:10px;
+} 
+.mainContainer2
+{
+    position:absolute;
+    top: 10%;
+    left:60%;
+    background:#087d76;
+    
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(15.5px);
+    -webkit-backdrop-filter: blur(15.5px);
+    border-radius: 10px;
+    border: 0px solid rgba(255,255,255,0.18);
+    width: 420px;
+    height:500px;
+   
+    border-radius: 20px;
+    margin-right: 0px;
+   
+}
+ .mainContainer2 .from-box 
+ {
+     width: 100%;  
+     padding: 40px; 
+ } 
+.mainContainer2 .home
+{
+    position: absolute;
+    bottom: 2%;
+    right:47%;
+}
+
+
+
+
+.from-box  .lm{
+    position:absolute;
+    top:12%;
+    left:15%;
+    font-family: Century Gothic;
+    background:#065b52;
+    border-radius: 50px;
+    height: 80px;
+    width: 300px;
+    font-size: 20px;
+    color: #80808f;
+    box-shadow: 
+    20px 20px 40px #323b3b,
+    -30px -30px 45px #2a8b7c;
+}
+ .input-box
+ {
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    border-bottom: 2px solid #2d2d82;
+} 
+
+.input-box1 .line
+{
+    position: absolute;
+    top:63%;
+    right:10%;
+
+    background: #393988;
+    height:2px;
+    width:80%;
+}
+ .input-box label
+{
+    position: absolute;
+    top: 90%;
+    right:5px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:rgb(2, 42, 32);
+    font-weight: 500;
+    pointer-events:none;
+    transition: 5s;
+}
+
+.input-box1 label
+{
+    position: absolute;
+    top: 60%;
+    right:12%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:rgb(2, 41, 32);
+    font-weight: 500;
+    pointer-events:none;
+    transition: 5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+    top: 50px;
+
+}
+.input-box1 input:focus~label,
+.input-box1 input:valid~label
+{
+    top: 55px;
+
+}
+
+
+ ion-icon
+{
+    font-size: 30px;
+    color:#06423c;
+}
+.input-box input
+{
+    position: absolute;
+    top: 87%;
+    left:30%;
+    
+    background: transparent;
+    border:none;
+    outline: none;
+    text-align: left;
+    text-decoration:solid;
+    font-size: 16px;
+}
+.input-box1 input
+{
+    position: absolute;
+    top: 57%;
+    left:35%;
+    
+    background: transparent;
+    border:none;
+    outline: none;
+    text-align:left;
+    text-decoration:solid;
+    font-size: 16px;
+}
+
+.from-box button
+{
+    position: absolute;
+    top:75%;
+    width: 30%;
+    height: 6%;
+    left: 140px;
+    background: #b97a8c;
+    border: rgb(61, 7, 90);
+    border-radius: 6px;
+    cursor:pointer;
+
+}
+.input-box .pr-ion
+{
+    position:absolute;
+    top:80%;
+} 
+.input-box1 .id-ion
+{
+    position:absolute;
+    top:55%;
+}
+
+
+
+
+
+
+
+
+ 
+
