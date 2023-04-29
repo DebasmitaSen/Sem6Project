@@ -5,6 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Open start.html",
