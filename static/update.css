@@ -1,25 +1,27 @@
- .body
+.body
 {
-    background-color: #073f2c;
+    display:flex;
+    height:100%;
+    width:100%;
+    background-color:#709c95;
 } 
 .table{
-    background-color:#829986;
-    
-    
-    
+    background-color:#709c95 ;
+    text-align: center;
     width: 100%;
-    height:700px;
-     left: 30px; 
+    height: 100%;
+    left:40px; 
    
     
 }
 .edit
 {
-    background-color:#032318;
+    position: absolute;
+    background-color:#485b47;
     margin-left: 150px;
-    width: 620px;
+    width: 420px;
     height:500px;
-    top:0;
+    top:10%;
     margin-bottom: 10px;
 }
 .edit2
@@ -28,9 +30,8 @@
     background-color:rgb(0, 0, 0) ;
     margin-top: 14px;
     margin: 35px;
-    height: 400px;
-    width: 550px;
-    top:0;
+    height: 340px;
+    width: 350px;
     margin-bottom: 60px;
 }
  .edit3
@@ -39,77 +40,86 @@
 } 
 .mainContainer2
 {
-    position: relative;
-    width: 400px;
-    height:500px;
-    background:linear-gradient(145deg,#758a79,#8ba48f);
-    border: 4px solid #829986;
+    position:absolute;
+    top: 10%;
+    left:60%;
+    background:#719284;
+    box-shadow: 
+    -5px -5px 29px #466966, 5px 5px 29px #75aea9;
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 520px;
+    width: 420px;
     border-radius: 20px;
-    box-shadow:20px 20px 40px #657769,
-    -20px -20px 40px #9cada0;
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    margin-right: 0px;
+   
 }
-.mainContainer2 .from-box 
-{
-    width: 100%;
-    padding: 40px;
-}
+ .mainContainer2 .from-box 
+ {
+     width: 100%;  
+     padding: 40px; 
+ } 
 .mainContainer2 .home
 {
     position: absolute;
-    bottom: 0px;
+    bottom: 2%;
+    right:47%;
 }
 
-/* .mainContainer2 .icon-close
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width:30px;
-    height:30px;
-    background: #495b4c;
-    font-size: 2em;
-    border: #073f2c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom-left-radius: 15px;
-    cursor: pointer;
-    z-index: 1; }*/
 
 
 
-.mainContainer2 .from-box h4{
+.from-box  .lm{
+    position:absolute;
+    top:12%;
+    left:15%;
     font-family: Century Gothic;
-    background-color:#597058;
+    background:#597058;
     border-radius: 50px;
-    text-align:center;
-    padding: 40px;
-   
-    margin-left: 20px;
-    margin-right: 20px;
+    height: 80px;
+    width: 300px;
     font-size: 20px;
     color: rgb(87, 201, 170);
     box-shadow: 
     23px 23px 45px #485b47,
     -23px -23px 25px #6a8569;
 }
-.mainContainer2 .from-box .input-box
-{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 2px solid #495b4c;
-}
-.input-box label
+ .input-box
+ {
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    border-bottom: 4px solid #495b4c;
+} 
+
+.input-box1 .line
 {
     position: absolute;
-    top: 50%;
+    top:63%;
+    right:10%;
+
+    background: #485b47;
+    height:4px;
+    width:80%;
+}
+ .input-box label
+{
+    position: absolute;
+    top: 90%;
     right:5px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:rgb(10, 72, 52);
+    font-weight: 500;
+    pointer-events:none;
+    transition: 5s;
+}
+
+.input-box1 label
+{
+    position: absolute;
+    top: 60%;
+    right:12%;
     transform: translateY(-50%);
     font-size: 18px;
     color:rgb(10, 72, 52);
@@ -121,9 +131,16 @@
 .input-box input:focus~label,
 .input-box input:valid~label
 {
-    top: -5px;
+    top: 50px;
 
 }
+.input-box1 input:focus~label,
+.input-box1 input:valid~label
+{
+    top: 55px;
+
+}
+
 
  ion-icon
 {
@@ -132,8 +149,10 @@
 }
 .input-box input
 {
-    width:80%;
-    height: 100%;
+    position: absolute;
+    top: 87%;
+    left:30%;
+    
     background: transparent;
     border:none;
     outline: none;
@@ -141,10 +160,24 @@
     text-decoration:solid;
     font-size: 16px;
 }
+.input-box1 input
+{
+    position: absolute;
+    top: 57%;
+    left:35%;
+    
+    background: transparent;
+    border:none;
+    outline: none;
+    text-align:left;
+    text-decoration:solid;
+    font-size: 16px;
+}
 
 .from-box button
 {
     position: absolute;
+    top:75%;
     width: 30%;
     height: 6%;
     left: 140px;
@@ -152,16 +185,15 @@
     border: #495b46;
     border-radius: 6px;
     cursor:pointer;
+
 }
-.video{
-    width: 550px;
-    /* padding-top: 10px; */
+.input-box .pr-ion
+{
+    position:absolute;
+    top:80%;
+} 
+.input-box1 .id-ion
+{
+    position:absolute;
+    top:55%;
 }
-
-
-
-
-
-
-
-

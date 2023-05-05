@@ -3,7 +3,7 @@ import db_conn
 import db_execute_query
 from imgcapture import imcapture
 from recogniy import recogniseImg
-import connection
+import image_manupulation
 import cv2
 
 # Create a Flask Instance
@@ -30,8 +30,8 @@ def update():
         id = request.form['id']
         name = request.form['name']
         imcapture(id, name, camera)
-        connection.insert_to_db()
-        connection.crbk()
+        image_manupulation.insert_to_db()
+        image_manupulation.crbk()
     return render_template('update.html')
 
 
@@ -40,14 +40,14 @@ def details():
     id = '' 
     name = ''
     total_attendence = ''
-    image = url_for('static', filename = 'person.webp')
+    image = url_for('static', filename = 'person.png')
     if(request.method == 'POST') :       
         id = request.form['id']
-        connection = db_conn.create_db_connection('localhost', 'root', '', 'person')
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
         query = "select name, total_att from total_attendence where id = %s"
         results = db_execute_query.read_query(connection, query, id)
         if not results:
-            image = url_for('static', filename = 'person.webp')
+            image = url_for('static', filename = 'person.png')
             return render_template('details.html', no_data = True, image = image)
         
         for row in results:
@@ -76,7 +76,6 @@ def generate_frames(camera):
 
 @app.route('/video_feed')
 def video_feed():
-    # camera = cv2.VideoCapture(0)
     return Response(generate_frames(camera),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
@@ -87,7 +86,7 @@ def start():
 @app.route('/get_data')
 def get_data():
     id = recogniseImg(camera)
-    connection = db_conn.create_db_connection('localhost', 'root', '', 'person')
+    connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
     query = "select name, total_att from total_attendence where id = %s"
     results = db_execute_query.read_query(connection, query, id)
     connection.close()

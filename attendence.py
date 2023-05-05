@@ -27,7 +27,7 @@ def total_attendence(ID, connection, name) :
 
 def enter_attendence(ID, connection) :
     query_1 = """
-    select Name from images where id = %s;
+    select Name from student_info where id = %s;
     """
         
     results = db_execute_query.read_query(connection, query_1, ID)
@@ -36,9 +36,10 @@ def enter_attendence(ID, connection) :
     name = db_data_unpack.unpack(results)
 
     query_2 = """
-    insert into attendence(id, name) values (%s, %s)
+    insert into attendence(id, name, login_info) values (%s, %s, %s)
     """
-    data = (ID, name)
+    time = datetime.datetime.now()
+    data = (ID, name, time)
 
     db_execute_query.execute_query(connection, query_2, data)
     total_attendence(ID, connection, name)
@@ -47,7 +48,7 @@ def enter_attendence(ID, connection) :
 def markAttendance(ID) :
 
     system_time_stamp = datetime.datetime.now()
-    connection = db_conn.create_db_connection("localhost", "root", "", "person")
+    connection = db_conn.create_db_connection("localhost", "root", "", "students_details")
 
     query_1 = """
     select login_info from attendence where id = %s order by login_info desc limit 1

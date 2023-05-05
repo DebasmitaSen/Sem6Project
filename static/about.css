@@ -16,18 +16,21 @@ body
 }
 .home
 {
-    position: relative;
-    top: 35px;
+    position:absolute;
+    top:2%;
+    right:2%;
 }
 ion-icon{
     font-size: 30px;
-    color: greenyellow;
+    color:#016e6e;
 }
 
 
 .scan
 {
-    position: relative;
+    position: absolute;
+    width: 50%;
+    top:25%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -106,4 +109,134 @@ ion-icon{
     {
         opacity: 5;
     }
+}
+
+.section{
+    min-height: 100vh;
+}
+
+.section .rajdeep
+{
+    position: absolute;
+    bottom: 17%;
+    left:60%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style: initial;
+    color:#016e6e;
+    padding-bottom: 15px;
+}
+
+.section .rajdeep img
+{
+    position: absolute;
+    top: 100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid #016e6e;
+    padding: 6px;
+}
+
+
+
+.section .Debasmita
+{
+    position: absolute;
+    bottom: 17%;
+    left:6%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style: initial;
+    color:#016e6e;
+    padding-bottom: 15px;
+}
+
+.section .Debasmita img
+{
+    position: absolute;
+    top:100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid #016e6e;
+    padding: 6px;
+}
+
+
+
+.section .rahul
+{
+    position: absolute;
+    bottom: 17%;
+    left:35%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style:initial;
+    color: #016e6e;
+    padding-bottom: 15px;
+}
+
+.section .rahul img
+{
+    position: absolute;
+    top: 100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid #016e6e;
+    padding: 6px;
+}
+
+
+.section .romit
+{
+    position: absolute;
+    bottom:17%;
+    left:85%;
+    font-size: 20px;
+    color: aliceblue;
+    font-style:initial;
+    color: #016e6e;
+    
+    padding-bottom: 15px;
+    
+}
+.section .romit img
+{
+    position: absolute;
+    top: 100%;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: auto;
+    display: block;
+    border:3px solid #016e6e;
+    padding: 6px;
+}
+
+.aa
+{
+    position: absolute;
+    top:2%;
+    left:4%;
+    font-size: 20px;
+    color: #016e6e;
+    background-color: rgb(255, 255, 255); /* Fallback color */
+    background-color: rgba(14, 154, 23, 0.4);
+    color: rgb(252, 252, 252);
+    font-weight: bold;
+    border: 3px solid #2bc80f;
+    width:32px;
+
 }

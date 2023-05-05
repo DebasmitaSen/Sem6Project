@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attandance</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'start.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class ="body">
@@ -20,42 +22,42 @@
                 </div>
             </td>
             <td>
-                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+                
 
-                <div class="edit4" id = "data"><br><br>
+                <div class="edit4" id = "data" ><br><br>
                     <script>
                         function call_python_function() {
                             $.ajax({
                                 type: 'GET',
                                 url: '/get_data',
                                 success: function(data) {
-                                    $("#data").html(`<div class="edit4"><br><br>
-                            <span class="home">
-                                <a href="{{ url_for('home') }}"><ion-icon name="home-outline"></ion-icon></a>
-                            </span>
-                            
+                                    $("#data").html(`<div class = "edit4"><br><br>
+                    <span class="home">
+                        <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
+                    </span>
+                    
+                    
 
-                                <h1 class="edit5">Attendance recorded!!</h1>
-                                <p class="edit6"></p>
+                        <h1 class="edit5">Attendance recorded!!</h1>
+                        <p class="edit6"></p>
+
+                        <h4 class="Att-form">Total Attendance:-`  + data[2] + `</h4>
+                        <p class="edit6"></p><br>
+
+
+                        <form>
+                            <h2 class="edit7">
+                                <ion-icon name="person"></ion-icon><div class="edit8">NAME: ` + data[1]+`
+                                    
+                                 </div><br><p class="edit11"></p> 
+
+                                <ion-icon name="albums"></ion-icon><div class="edit8">ID: `+ data[0]+`
+                                    
+                                </div>
+                                <br><br>
                                 
-                                <h4 class="Att-form">Total Attendance:-` + data[2] + `</h4>
-                                <p class="edit6"></p><br>
-
-
-                                <form>
-                                    <h2 class="edit7">
-                                        <ion-icon name="person-outline"></ion-icon><div class="edit8">NAME: ` + data[1]+`
-                                            
-                                        </div><br><p class="edit11"></p> 
-
-                                        <ion-icon name="albums-outline"></ion-icon><div class="edit8">ID: `+ data[0]+`
-                                            
-                                        </div>
-                                        <br><br>
-                                        
-                                    </h2>
-                                </form></div>`);
+                            </h2>
+                        </form>`);
                                 },
                                 complete: function() {
                                     // Schedule the next request when the current one's complete
@@ -66,8 +68,7 @@
                         $(document).ready(function() {
                             call_python_function();
                         });
-                    </script>
-                    
+                    </script>   
                     </div>
                 </td>
             </tr>

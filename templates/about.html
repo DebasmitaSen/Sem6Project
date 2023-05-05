@@ -4,21 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>facial recognation</title>
+    <title>face recognation</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'about.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+    <div class="home">
+        <span class="homo">
+           <a href="{{ url_for('home') }}"> <ion-icon name="home"></ion-icon></a>
+        </span>
+    </div>
+
     <div class="scan">
         <div class="face"></div>
         <div class="dots"></div>
-   
-    <span class="home">
-        <a href="{{ url_for('home') }}"> <ion-icon name="home-outline"></ion-icon></a>
-    </span>
+    </div>
+
+    <div class="aa">
+        <H1>AboutUs</H1>
+    </div>
+      
+    <div class="section">
+
+        <div class="romit">
+            <article>
+                 <img src="{{ url_for('static', filename = 'romit.jpeg') }}">
+                 <h4>Romit Bhattacharjee</h4>
+            </article>
+        </div>
+
+        <div class="Debasmita">
+            <article>
+                <h4>Debasmita Sen</h4>
+                 <img src="{{ url_for('static', filename = 'debasmita.jpg') }}"> 
+            </article>
+        </div>
+
+        <div class="rahul">
+            <article>
+                <h4>Rahul Pal</h4>
+                 <img src="{{ url_for('static', filename = 'rahul.jpg') }}"> 
+            </article>
+        </div>
+
+        <div class="rajdeep">
+            <article>
+                <h4>Rajdip Khan</h4>
+                 <img src="{{ url_for('static', filename = 'rajdip.jpeg') }}"> 
+            </article>
+        </div>
+
+
     </div>
 
     
