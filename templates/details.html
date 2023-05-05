@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowAttandance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'details.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+
+    <div class="photo">
+
+        <div class="image">
+            <img src="{{ image }}">
+        </div>
+             <div class="content">
+                <div class="details">
+
+                    <span class="home">
+                        <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
+                      </span>
+                
+
+                    <form>
+                      <h2 class="edit7">
+                        <div class="edit8">NAME:  {{ name }} </div>
+                        <br>
+                 
+                        <div class="edit9">ID: {{ id }} </div>
+                        <br>
+                    
+            
+                        <div class="edit10">Total Attandance: {{ attendence }} </div>
+                      <br>
+                
+                      </h2>
+                    </form>
+                    {% if no_data %}
+                    <script>
+                        alert("No student found for the ID");
+                    </script>
+                    {% endif %} 
+                </div>
+        </div>
+    </div>
+   
+
+
+        <div class ="search-box"><form method="post">
+        <input type="text" placeholder="search by id" name = 'id' required>
+        <button class="icon-search"><ion-icon name="search-outline"></ion-icon></button>
+        </form></div>
+        
+</body>
+</html>
+

@@ -1,0 +1,333 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body
+{
+   
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:  #16796f;
+}
+
+
+/* .nav-bar
+{
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    width: 97%;
+    height: 40px;
+    background:#92a8a6;
+    border:0px  #92a8a0;
+    border-radius: 20px;
+    box-shadow:-18px 18px 36px #697c6d,18px -18px 36px #9bb69f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+} */
+
+
+
+
+
+ .nav-bar h3
+{
+    position:absolute;
+    top:3%;
+    left:28%;
+    letter-spacing: 2px;
+
+    font-size: 50px;
+    color:transparent;
+    -webkit-text-stroke: 1px black;
+    background:url(images.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 5s linear infinite;
+} 
+
+@keyframes back{
+    100%
+    {
+        background-position: 200px 0;
+    }
+}
+/* .downbar
+{
+    position:fixed;
+    bottom: 0%;
+    width: 100%;
+    height: 10%;
+    background:#172a2e;
+    border:0px  #829986;
+    border-radius: 0px;
+    overflow: hidden;
+} */
+
+
+.container
+{
+    height: 250px;
+    width:80%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content:space-around;
+    
+}
+ .container .btn1
+{
+    background:linear-gradient(145deg, #16796f, #16796f);
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    font-size:18px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 80px;
+    color:hsl(120, 4%, 27%);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+    transform: translateX(0%);
+    width: 200px;
+    height: 200px;
+    box-shadow:  -15px -15px 30px #13675e, 15px 15px 30px #198b80;
+
+}
+.container .btn1:hover
+{
+    font-size:28px;
+    letter-spacing: 5px;
+    color: #C85250;
+    transition: 0.5s;
+    height:300px;
+    width:300px;
+    border-radius: 150px;
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    box-shadow:  -25px -25px 40px #13675e, 25px 25px 40px #198b80;
+
+}
+
+
+ion-icon{
+    
+    color:hsl(120, 4%, 27%);
+    font-size: 50px;
+     /* padding-top: 50px; */
+    padding-right: -10px; 
+}
+
+
+
+
+
+
+.container .btn2
+{
+    background:linear-gradient(145deg, #16796f, #16796f);
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    font-size:18px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 80px;
+    color:hsl(120, 4%, 27%);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+    transform: translateX(0%);
+    width: 200px;
+    height: 200px;
+    box-shadow:  -15px -15px 30px #13675e, 15px 15px 30px #198b80;
+
+
+}
+.container .btn2:hover
+{
+    font-size:28px;
+    letter-spacing: 5px;
+    color: #C85250;
+    transition: 0.5s;
+    height:300px;
+    width:300px;
+    border-radius: 150px;
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    box-shadow:  -25px -25px 40px #13675e, 25px 25px 40px #198b80;
+
+}
+
+
+ion-icon{
+    
+    color:hsl(120, 4%, 27%);
+    font-size: 60px;
+    
+    padding-right: 7px; 
+}
+.container .btn2 a{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:hsl(0, 2%, 11%);
+
+}
+
+
+.container .btn3
+{
+    background:linear-gradient(145deg, #16796f, #16796f);
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    font-size:18px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 80px;
+    color:hsl(120, 4%, 27%);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+    transform: translateX(0%);
+    width: 200px;
+    height: 200px;
+    box-shadow:  -15px -15px 30px #13675e, 15px 15px 30px #198b80;
+
+
+}
+.container .btn3:hover
+{
+    font-size:28px;
+    letter-spacing: 5px;
+    color: #C85250;
+    transition: 0.5s;
+    height:300px;
+    width:300px;
+    border-radius: 150px;
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    box-shadow:  -25px -25px 52px #13675e, 25px 25px 52px #198b80;
+
+
+}
+
+
+ion-icon{
+    
+    color:hsl(120, 4%, 27%);
+    font-size: 50px;
+    
+    padding-right: -10px; 
+}
+.container .btn3 a{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:hsl(120, 4%, 27%);
+
+}
+
+
+.container .btn4
+{
+    background:linear-gradient(145deg, #16796f, #16796f);
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    font-size:18px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: hand;
+    border-radius: 80px;
+    color:hsl(120, 4%, 27%);
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor:grabbing;
+    transform: translateX(0%);
+    width: 200px;
+    height: 200px;
+    box-shadow:  -15px -15px 30px #13675e, 15px 15px 30px #198b80;
+
+} 
+.container .btn4:hover
+{
+    font-size:28px;
+    letter-spacing: 5px;
+    color: #C85250;
+    transition: 0.5s;
+    height:300px;
+    width:300px;
+    border-radius: 150px;
+    border-left:0px solid #10564f;
+    border-top: 0px solid #10564f;
+    border-right:0px solid #10564f;
+    border-bottom:0px solid #10564f;
+    box-shadow:  -25px -25px 52px #13685f, 26px 26px 52px #198a7f;
+
+}
+
+ion-icon{
+    
+    color:hsl(120, 4%, 27%);
+    font-size: 50px;
+     /* padding-top: 50px; */
+    padding-right: -12px; 
+}
+.container .btn4 a
+{
+    text-decoration: none;
+    font-size: large;
+    padding-top: -20px;
+    font-weight: 600;
+    color:hwb(257 4% 47%);
+}
+
+
+
+

@@ -1,0 +1,198 @@
+*
+{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background:#709c95;
+    overflow: hidden;
+}
+
+
+.photo
+{
+    position: relative;
+    width: 420px;
+    height:450px;
+    background:#719284;
+    box-shadow:-5px -5px 29px #466966, 5px 5px 29px #75aea9;
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    /* border:1px solid rgba(255,255,255,0.18); */
+    cursor:pointer;
+    transition: 0.5s;
+    
+}
+.photo:hover
+{
+    height:500px;
+    
+}
+.image
+{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height:150px;
+    background-color:aliceblue;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    overflow:hidden;
+    transition: 0.5s;
+}
+.photo:hover .image
+{
+    height:250px;
+    width:250px;    
+}
+.image img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:none;
+}
+.photo .content
+{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    display: flex; 
+    justify-content: center;
+    align-items: flex-end;
+
+}
+.photo .content .details
+{
+    
+    padding: 10px;
+    text-align:justify;
+    height: 55%;
+    width:100%;
+    transition: 0.5s;
+    object-fit: hide;
+}
+
+.photo .content .details .edit7
+{
+    display:inline;
+    padding-top: 20px;
+    margin: 20px 0;
+
+}
+.photo .content .details .edit7 .edit8
+{
+    position: absolute;
+    top:45%;
+    right:60px;
+    font-size: 20px;
+    background: #c5c9ab;
+    height: 40px;
+    width: 300px;
+    font-weight: lighter;
+    line-height: 28px;
+    border-radius: 20px;
+    padding-left: 10px; 
+    padding-top: 7px;  
+    box-shadow: 
+    2px 2px 2px #a7ab91,
+    -2px -2px 2px #e3e7c5;
+   
+}
+
+.photo .content .details .edit7 .edit9
+{
+    position: absolute;
+    top:60%;
+    right:60px;
+    font-size: 20px;
+    background: #c5c9ab;
+    height: 40px;
+    width: 300px;
+    font-weight: lighter;
+    line-height: 28px;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-top: 7px; 
+    box-shadow: 
+    2px 2px 2px #a7ab91,
+    -2px -2px 2px #e3e7c5;
+   
+}
+
+.photo .content .details .edit7 .edit10
+{
+    position: absolute;
+    top:75%;
+    right:60px;
+    font-size: 20px;
+    background: #c5c9ab;
+    height: 40px;
+    width: 300px;
+    font-weight: lighter;
+    border-radius: 20px;
+    line-height: 28px;
+    padding-left: 10px;
+    padding-top: 7px; 
+    box-shadow: 
+    2px 2px 2px #a7ab91,
+    -2px -2px 2px #e3e7c5;
+   
+}
+
+ .search-box input
+{
+    position:absolute;
+    top: 2%;
+    right: 2%;
+    width: 300px;
+    height: 6%;
+    background:#c5c9ab;
+    border:1px solid #3e8181;
+    border-radius: 20px;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+.search-box  .icon-search
+{
+    position:absolute;
+    top:0%;
+    right:0%;
+    margin-top:19px;
+    margin-right:2%;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    color:#073f2c;
+    
+}
+
+.photo .content .details .home
+{
+    position: absolute;
+    bottom:2%;
+    right: 45%;
+    font-size: 30px;
+}
+ion-icon{
+    color: #073f2c;
+}
+

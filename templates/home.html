@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'home.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+    
+    <div class ="nav-bar">
+         <h3>ATTENDANCE SYSTEM</h3> 
+    </div>
+       <br><br>
+
+    <div class="container">
+        
+            <button onclick="btn1()" class="btn1"><ion-icon name="people-circle"><br><br>
+            </ion-icon>AboutUs</button>
+            <script>
+                function btn1(){
+                    document.location.href="{{ url_for('about') }}";
+                }
+            </script>  
+
+            <button onclick="btn2()" class="btn2"><ion-icon name="add-circle"><br><br></ion-icon>Update</button>
+            <script>
+                function btn2(){
+                    document.location.href="{{ url_for('update') }}";
+                }
+            </script>  
+
+            <button onclick="btn3()" class="btn3"><ion-icon name="reader"><br><br></ion-icon>Details</button>
+            <script>
+                function btn3(){
+                    document.location.href="{{ url_for('details') }}";
+                }
+            </script>  
+
+            <button onclick="btn4()" class="btn4"><ion-icon name="camera"><br><br></ion-icon>Start</button>
+            <script>
+                function btn4(){
+                    document.location.href="{{ url_for('start') }}";
+                }
+            </script>  
+            
+    </div>
+    <div class="downbar">
+        <h3></h3>
+       </div>
+
+    <div class="box"></div>
+
+    
+            
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'update.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class ="body">
+    <table class="table" align="center">
+        <tr>
+            <td>
+                <div class="edit">
+                    <h6 class="edit3"></h6>
+                    <div class="edit2">
+                        <img class = 'video' src="{{ url_for('video_feed') }}">
+                    </div>
+                </div>
+            </td>
+            <td>
+                
+    
+        <div class="mainContainer2">
+            <span class="home">
+                <a href="{{ url_for('home') }}"> <ion-icon name="home"></ion-icon></a>
+            </span>
+            
+            
+            <div class="from-box">
+                <span class="lm"><h4>Added to database</h4></span>
+                
+                <form action="/update" method="post">
+                    <div class="input-box">
+                        <!-- username-->
+                         <label for="username">Name</label>
+                         <div class="pr-ion">
+                            <ion-icon name="person"></ion-icon>
+                         </div> 
+
+                        
+                            <input type="text" placeholder="enter-name" name="name" required>
+                      
+                   </div>
+                   
+                    <br><br><br>
+                    <div class="input-box1">
+                        <div class="line">
+                            
+                        </div>
+                        
+                        <!--Id-->
+                         <label for="Id">Id</label> 
+                         <div class="id-ion"><ion-icon name="albums"></ion-icon>
+                    </div>
+                        
+                            <input type="text" placeholder="enter-id" name="id" required>
+                       
+                        
+                    </div>
+                    
+
+                    <br><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+         </div> 
+        </tr>
+    
+    </table>
+</body>
+</html>
