@@ -21,6 +21,7 @@ def home():
 def about():
     return render_template('about.html')
 
+# camera = cv2.VideoCapture("http://192.168.0.101:4747/video")
 camera = cv2.VideoCapture(0)
 
 @app.route("/update", methods = ['GET', 'POST'])
@@ -85,7 +86,10 @@ def start():
 
 @app.route('/get_data')
 def get_data():
-    id = recogniseImg(camera)
+    id =''
+    name =''
+    total_attendence = ''
+    id = recogniseImg(camera)  
     connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
     query = "select name, total_att from total_attendence where id = %s"
     results = db_execute_query.read_query(connection, query, id)

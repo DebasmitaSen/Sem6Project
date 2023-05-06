@@ -24,20 +24,20 @@
     cursor:pointer;
     transition: 0.5s;
     margin-left: 150px;
-    width: 420px;
-    height: 500px;
-    margin-bottom: 10px;
+    width: 620px;
+    height: 520px;
+    margin-bottom: 20px;
 }
 .edit2{
     background-color: rgb(0, 0, 0);
     margin-top: 14px;
     margin: 35px;
     height: 340px;
-    width: 350px;
+    width: 550px;
     margin-bottom: 60px;
 }
 .edit3{
-    height: 5px;
+    height: 10px;
 }
 .edit4{
     position:absolute;
@@ -154,5 +154,4 @@ ion-icon
 }
 .video{
     width: 550px;
-    padding-top: 10px;
 }
