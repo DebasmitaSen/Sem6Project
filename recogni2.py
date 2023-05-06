@@ -18,7 +18,7 @@ def findEncodings(image):
     encodeList = []
     for img in image:
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        faces_in_img = face_recognition.face_locations(img,model="cnn")
+        #faces_in_img = face_recognition.face_locations(img,model="cnn")
         encoded_face = face_recognition.face_encodings(img,faces_in_img)[0]
         
         encodeList.append(encoded_face)
@@ -47,14 +47,14 @@ encoded_face_train = findEncodings(imagelist)
 
 
 def recogniseImg():
-    cap  = cv2.VideoCapture("http://100.81.178.96:4747/video?640x480")
+    cap  = cv2.VideoCapture("http://100.109.29.227:4747/video?640x480")
 ##    cap  = cv2.VideoCapture(0)
     while True:
         success, img = cap.read()
         if success:
             imgS = cv2.resize(img, (0,0), None, 0.25,0.25)
             imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
-            faces_in_frame = face_recognition.face_locations(imgS)
+            faces_in_frame = face_recognition.face_locations(imgS,model="cnn")
             encoded_faces = face_recognition.face_encodings(imgS, faces_in_frame)
             for encode_face, faceloc in zip(encoded_faces,faces_in_frame):
                 matches = face_recognition.compare_faces(encoded_face_train, encode_face)
