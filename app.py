@@ -26,14 +26,15 @@ camera = cv2.VideoCapture(0)
 
 @app.route("/update", methods = ['GET', 'POST'])
 def update():
-
+    updated = False
     if (request.method == 'POST'):
         id = request.form['id']
         name = request.form['name']
         imcapture(id, name, camera)
         image_manupulation.insert_to_db()
         image_manupulation.crbk()
-    return render_template('update.html')
+        updated = True
+    return render_template('update.html', updated = updated)
 
 
 @app.route("/details", methods = ['GET', 'POST'])

@@ -30,8 +30,9 @@
             
             
             <div class="from-box">
+                {% if updated %}
                 <span class="lm"><h4>Added to database</h4></span>
-                
+                {% endif %}
                 <form action="/update" method="post">
                     <div class="input-box">
                         <!-- username-->
