@@ -51,16 +51,13 @@ body
 }
 .downbar
 {
-    position: absolute;
+    position:fixed;
     bottom: 0%;
     width: 100%;
-    height: 60px;
+    height: 10%;
     background:#172a2e;
     border:0px  #829986;
     border-radius: 0px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
@@ -88,7 +85,7 @@ body
     align-items: center;
     justify-content: center;
     cursor: hand;
-    border-radius: 100px;
+    border-radius: 80px;
     color:#166e61;
     z-index: 1;
     font-weight: 400;
@@ -111,7 +108,7 @@ body
     transition: 0.5s;
     height:300px;
     width:300px;
-    border-radius: 150px;
+    border-radius: 100px;
     border-left:12px solid #34755d;
     border-top: 12px solid #34755d;
     border-right:12px solid #34755d;
@@ -146,7 +143,7 @@ ion-icon{
     align-items: center;
     justify-content: center;
     cursor: hand;
-    border-radius: 100px;
+    border-radius: 80px;
     color: #277d75;
     z-index: 1;
     font-weight: 400;
@@ -169,7 +166,7 @@ ion-icon{
     transition: 0.5s;
     height:300px;
     width:300px;
-    border-radius: 150px;
+    border-radius: 100px;
     border-top: 12px solid #028476;
     border-left:12px solid #028476;
     border-right:12px solid #028476;
@@ -208,7 +205,7 @@ ion-icon{
     align-items: center;
     justify-content: center;
     cursor: hand;
-    border-radius: 100px;
+    border-radius: 80px;
     color: #216971;
     z-index: 1;
     font-weight: 400;
@@ -231,7 +228,7 @@ ion-icon{
     transition: 0.5s;
     height:300px;
     width:300px;
-    border-radius: 150px;
+    border-radius: 100px;
     border-top: 12px solid #346c72;
     border-left:12px solid #346c72;
     border-right:12px solid #346c72;
@@ -270,7 +267,7 @@ ion-icon{
     align-items: center;
     justify-content: center;
     cursor: hand;
-    border-radius: 100px;
+    border-radius: 80px;
     color:#032318;
     z-index: 1;
     font-weight: 400;
@@ -293,7 +290,7 @@ ion-icon{
     transition: 0.5s;
     height:300px;
     width:300px;
-    border-radius: 150px;
+    border-radius: 100px;
     border-top: 12px solid #1d545d;
     border-left:12px solid #1d545d;
     border-right:12px solid #1d545d;
