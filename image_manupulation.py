@@ -1,4 +1,3 @@
-import mysql.connector
 import os
 import db_conn
 import db_execute_query
