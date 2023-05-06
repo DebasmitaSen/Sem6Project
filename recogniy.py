@@ -12,14 +12,12 @@ arrays = image_manupulation.retrive()
 classID=arrays[0]
 names=arrays[1]
 images=arrays[2]
-name1=names
-cid=classID
 name2=[]
 classid=[]
-for i in range(len(name1)):
+for i in range(len(names)):
     for j in range(5):
-        name2.append(name1[i])
-        classid.append(cid[i])
+        name2.append(names[i])
+        classid.append(classID[i])
 
 
 def findEncodings(image):
@@ -46,7 +44,7 @@ for i in range (len(list1)):
         list3.append(var3)
 imagelist=[]
 
-for i in range(15):
+for i in range(len(names) * 5):
     path=list3[i]
     imgx=cv2.imread(path)
     imagelist.append(imgx)
