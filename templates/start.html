@@ -31,13 +31,21 @@
                                 type: 'GET',
                                 url: '/get_data',
                                 success: function(data) {
-                                    if(data[0] == null) {
+                                    if (data[0] == null) {
+                                        $("#data").html(`
+                    <span class="home">
+                        <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
+                    </span>
+                        <h3 class="edit5">Please take your face to the front of the camera</h3>
+                                                    `);   
+                                    }
+                                    else if(data[0] == 0) {
                                         $("#data").html(`
                     <span class="home">
                         <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
                     </span>
                         <h1 class="edit5">Not recognized!!</h1>
-                        `); 
+                                                    `); 
                                     }
                                     else {
                                     $("#data").html(`
