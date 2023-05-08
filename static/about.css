@@ -22,7 +22,7 @@ body
 }
 ion-icon{
     font-size: 30px;
-    color:#016e6e;
+    color:#152179;
 }
 
 
@@ -110,7 +110,6 @@ ion-icon{
         opacity: 5;
     }
 }
-
 .section{
     min-height: 100vh;
 }
@@ -123,7 +122,7 @@ ion-icon{
     font-size: 20px;
     color: aliceblue;
     font-style: initial;
-    color:#016e6e;
+    color:#0b0660;
     padding-bottom: 15px;
 }
 
@@ -137,7 +136,7 @@ ion-icon{
     background-size: cover;
     margin: auto;
     display: block;
-    border:3px solid #016e6e;
+    border:3px solid #501190;
     padding: 6px;
 }
 
@@ -151,7 +150,7 @@ ion-icon{
     font-size: 20px;
     color: aliceblue;
     font-style: initial;
-    color:#016e6e;
+    color:#0b0660;
     padding-bottom: 15px;
 }
 
@@ -165,7 +164,7 @@ ion-icon{
     background-size: cover;
     margin: auto;
     display: block;
-    border:3px solid #016e6e;
+    border:3px solid #501190;
     padding: 6px;
 }
 
@@ -179,7 +178,7 @@ ion-icon{
     font-size: 20px;
     color: aliceblue;
     font-style:initial;
-    color: #016e6e;
+    color: #0b0660;
     padding-bottom: 15px;
 }
 
@@ -193,7 +192,7 @@ ion-icon{
     background-size: cover;
     margin: auto;
     display: block;
-    border:3px solid #016e6e;
+    border:3px solid #501190;
     padding: 6px;
 }
 
@@ -206,7 +205,7 @@ ion-icon{
     font-size: 20px;
     color: aliceblue;
     font-style:initial;
-    color: #016e6e;
+    color: #0b0660;
     
     padding-bottom: 15px;
     
@@ -221,7 +220,7 @@ ion-icon{
     background-size: cover;
     margin: auto;
     display: block;
-    border:3px solid #016e6e;
+    border:3px solid #501190;
     padding: 6px;
 }
 
