@@ -257,11 +257,7 @@ ion-icon{
     justify-content: center;
     cursor: hand;
     border-radius: 80px;
-<<<<<<< HEAD
-    color:hsl(120, 24%, 88%);
-=======
-    color:#5390d9;
->>>>>>> 914f0b3fcc7538ec149e6280eb2b4b6713ab6195
+    color:#5e90d9;
     z-index: 1;
     font-weight: 100;
     letter-spacing: 2px;
