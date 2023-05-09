@@ -87,7 +87,7 @@ def start():
 
 @app.route('/get_data')
 def get_data():
-    id = 0
+    id = ''
     name =''
     total_attendence = ''
     id = recogniseImg(camera)  
