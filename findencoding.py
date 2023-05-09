@@ -44,4 +44,4 @@ def find_encoding():
 
 
     encoded_face_train = findEncodings(imagelist)
-    return encoded_face_train, name2, classid
+    return name2, classid, encoded_face_train
