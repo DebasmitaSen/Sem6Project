@@ -87,16 +87,17 @@ def start():
 
 @app.route('/get_data')
 def get_data():
-    id =''
+    id = 0
     name =''
     total_attendence = ''
     id = recogniseImg(camera)  
-    connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
-    query = "select name, total_att from total_attendence where id = %s"
-    results = db_execute_query.read_query(connection, query, id)
-    connection.close()
-    for row in results:
-        name, total_attendence = row
+    if id != 0 or id != None:
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+        query = "select name, total_att from total_attendence where id = %s"
+        results = db_execute_query.read_query(connection, query, id)
+        connection.close()
+        for row in results:
+            name, total_attendence = row
     data = [id, name, total_attendence]
     return data
 
