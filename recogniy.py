@@ -124,7 +124,7 @@ def recogniseImg(cap):
 
                     if c>0:
                         print(iD, name)
-                    # attendence.markAttendance(iD)
+                        attendence.markAttendance(iD)
                         return iD
             else:
                 return 0
