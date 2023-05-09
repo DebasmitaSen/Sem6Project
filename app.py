@@ -21,8 +21,8 @@ def home():
 def about():
     return render_template('about.html')
 
-# camera = cv2.VideoCapture("http://192.168.0.101:4747/video")
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture("http://192.168.30.73:4747/video")
+#camera = cv2.VideoCapture(0)
 
 @app.route("/update", methods = ['GET', 'POST'])
 def update():
