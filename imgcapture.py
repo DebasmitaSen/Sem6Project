@@ -7,9 +7,9 @@ def imcapture(id, name, cap):
         print("Error opening video file")
 
     # Initialize a variable to keep track of the number of frames captured
-    frame_count = 0
+    frame_count = 1
 
-    while cap.isOpened() and frame_count < 10:
+    while cap.isOpened() and frame_count < 6:
         # Read the next frame from the video
         ret, frame = cap.read()
         # Check if the frame was successfully read
