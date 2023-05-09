@@ -53,15 +53,15 @@ for i in range(len(names) * 5):
 encoded_face_train = findEncodings(imagelist)
 
 
-
 ###### take pictures from device
 def recogniseImg(cap):
 
     success, img = cap.read()
     if not success:
-        print("unable to access camera")
-    else: 
-        iD = ''          
+        print("Unable to access camera")
+    else:
+        iD = 0 
+        x=0.5          
         imgS = cv2.resize(img, (0,0), None, 0.25,0.25)
         imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
         faces_in_frame = face_recognition.face_locations(imgS)
@@ -69,14 +69,15 @@ def recogniseImg(cap):
         for encode_face, faceloc in zip(encoded_faces,faces_in_frame):
             matches = face_recognition.compare_faces(encoded_face_train, encode_face)
             faceDist = face_recognition.face_distance(encoded_face_train, encode_face)
-            matchIndex = np.argmin(faceDist)
-            print(matchIndex)               
-            if matches[matchIndex]:                   
-                name= name2[matchIndex]
-                iD = classid[matchIndex]
-                #call mark attendance
-                attendence.markAttendance(iD)
-                print(iD, name)
-                return (iD)
-            else:
-                return (iD)
+            print(faceDist)
+            if (faceDist < x).any():
+                matchIndex = np.argmin(faceDist)
+                if matches[matchIndex]:                   
+                    name= name2[matchIndex]
+                    iD = classid[matchIndex]
+                    #call mark attendance
+                    attendence.markAttendance(iD)
+                    print(iD, name)
+                    return (iD)
+                else:
+                    return (iD)
