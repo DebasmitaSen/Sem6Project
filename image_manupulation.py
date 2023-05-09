@@ -10,11 +10,11 @@ def insert_to_db():
    cursor = db.cursor()
    cursor.execute(query_1)
 
-   folder_path = "C:/Users/mouli/Documents/GitHub/Sem6Project/Input/"
-   parent_dir="C:/Users/mouli/Documents/GitHub/Sem6Project/Data/"
+   # folder_path = "C:/Users/mouli/Documents/GitHub/Sem6Project/Input/"
+   # parent_dir="C:/Users/mouli/Documents/GitHub/Sem6Project/Data/"
 
-   # folder_path = "D:/Face_recognization_project/Sem6Project/Input/"
-   # parent_dir="D:/Face_recognization_project/Sem6Project/Data/"
+   folder_path = "D:/Face_recognization_project/Sem6Project/Input/"
+   parent_dir="D:/Face_recognization_project/Sem6Project/Data/"
 
    image_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
