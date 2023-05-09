@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2023 at 05:41 PM
+-- Generation Time: May 09, 2023 at 08:14 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,22 @@ CREATE TABLE `attendence` (
 --
 
 INSERT INTO `attendence` (`sl_no`, `id`, `name`, `login_info`) VALUES
-(2, 95, 'Rahul', '2023-05-05 15:31:22');
+(2, 95, 'Rahul', '2023-05-05 15:31:22'),
+(3, 95, 'Rahul', '2023-05-07 12:50:14'),
+(4, 22, 'Romit', '2023-05-07 12:50:19'),
+(5, 61, 'Anirban', '2023-05-07 12:55:27'),
+(6, 87, 'kusal paul', '2023-05-07 12:56:13'),
+(7, 95, 'Rahul', '2023-05-07 16:38:29'),
+(8, 22, 'Romit', '2023-05-07 16:39:57'),
+(9, 61, 'Anirban', '2023-05-07 16:40:35'),
+(10, 79, 'Debasmita', '2023-05-07 16:40:39'),
+(11, 105, 'Rajdip', '2023-05-07 16:53:13'),
+(12, 95, 'Rahul', '2023-05-09 05:32:29'),
+(13, 22, 'Romit', '2023-05-09 05:33:08'),
+(14, 79, 'Debasmita', '2023-05-09 05:33:22'),
+(15, 61, 'Anirban', '2023-05-09 05:33:46'),
+(16, 0, 'Fake', '2023-05-09 05:35:10'),
+(17, 105, 'Rajdip', '2023-05-09 05:54:00');
 
 -- --------------------------------------------------------
 
@@ -58,8 +73,11 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`id`, `name`, `image_path`) VALUES
+(0, 'Fake', 'Data/0'),
 (22, 'Romit', 'Data/22'),
+(61, 'Anirban', 'Data/61'),
 (79, 'Debasmita', 'Data/79'),
+(87, 'kusal paul', 'Data/87'),
 (95, 'Rahul', 'Data/95'),
 (105, 'Rajdip', 'Data/105');
 
@@ -80,10 +98,13 @@ CREATE TABLE `total_attendence` (
 --
 
 INSERT INTO `total_attendence` (`id`, `name`, `total_att`) VALUES
-(22, 'Romit', 0),
-(79, 'Debasmita', 0),
-(95, 'Rahul', 1),
-(105, 'Rajdip', 0);
+(0, 'Fake', 1),
+(22, 'Romit', 3),
+(61, 'Anirban', 3),
+(79, 'Debasmita', 2),
+(87, 'kusal paul', 1),
+(95, 'Rahul', 4),
+(105, 'Rajdip', 2);
 
 --
 -- Indexes for dumped tables
@@ -116,7 +137,7 @@ ALTER TABLE `total_attendence`
 -- AUTO_INCREMENT for table `attendence`
 --
 ALTER TABLE `attendence`
-  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
