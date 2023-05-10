@@ -11,31 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class ="body">
-
-    <div id="loading-bar-container" style="display: none;">
-        <div id="loading-bar"></div>
-      </div>
-      <script>
-        function startLoadingBar() {
-          var container = document.getElementById("loading-bar-container");
-          container.style.display = "block";
-          var bar = document.getElementById("loading-bar");
-          bar.style.width = "0%";
-          var startTime = new Date().getTime();
-          var intervalId = setInterval(function() {
-            var elapsed = new Date().getTime() - startTime;
-            if (elapsed >= 30000) {
-              clearInterval(intervalId);
-              container.style.display = "none";
-            } else {
-              var progress = Math.round(elapsed / 300);
-              bar.style.width = progress + "%";
-            }
-          }, 100);
-        }
-      </script>
-        
-
     <table class="table" align="center">
         <tr>
             <td>

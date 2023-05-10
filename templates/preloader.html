@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Training</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'preloader.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body class="body">
+    <div class="text"><center>Please wait untill the Face Train complete</center></div>
+    <div id = "loader"></div>
+    
+    <script>
+    $(document).ready(function() {
+        // Show preloader
+        $("#loader").show();
+        // Send AJAX request to Flask app
+        $.ajax({
+          type: "POST",
+          url: "/face_train",
+          success: function(data) {
+            // Hide preloader
+            $("#loader").hide();
+            window.location.replace("{{ url_for('Start') }}");
+          }
+        });
+      });
+    </script>
+
+</body>
+</html>
