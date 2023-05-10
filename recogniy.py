@@ -6,7 +6,7 @@ import attendence
 import cv2
 import dlib
 from imutils import face_utils
-
+import findencoding
 
 #code to connect to database and collect images and the id of student
 #array name must be 'images'
@@ -54,6 +54,14 @@ for i in range(len(names) * 5):
 
 
 encoded_face_train = findEncodings(imagelist)
+
+def face_train():
+    global encoded_face_train
+    global name2
+    global classid
+
+    name2, classid, encoded_face_train = findencoding.find_encoding()
+
 
 # initialize dlib's face detector and landmark predictor
 detector = dlib.get_frontal_face_detector()

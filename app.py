@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_from_directory, url_for,
 import db_conn
 import db_execute_query
 from imgcapture import imcapture
-from recogniy import recogniseImg
+from recogniy import recogniseImg, face_train
 import image_manupulation
 import cv2
 
@@ -83,6 +83,7 @@ def video_feed():
 
 @app.route("/start")
 def start(): 
+    face_train()
     return render_template('start.html')
 
 @app.route('/get_data')
