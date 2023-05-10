@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory, url_for, Response
+from flask import Flask, render_template, request, send_from_directory, url_for, Response, stream_with_context
 import db_conn
 import db_execute_query
 from imgcapture import imcapture
@@ -83,8 +83,14 @@ def video_feed():
 
 @app.route("/start")
 def start(): 
-    face_train()
-    return render_template('start.html')
+    def generate():
+        yield render_template('start.html')
+        yield '<script>document.getElementById("loading-bar-script").onload = startLoadingBar;</script>'
+        # Execute the long-running task here
+        # ...
+        face_train()
+    return Response(stream_with_context(generate()))
+    
 
 @app.route('/get_data')
 def get_data():
