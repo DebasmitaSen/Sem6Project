@@ -110,5 +110,9 @@ def get_data():
     data = [id, name, total_attendence]
     return data
 
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
 if __name__ == '__main__' :
     app.run(debug=True)

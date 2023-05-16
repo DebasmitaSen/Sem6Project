@@ -23,7 +23,7 @@ body
     position: relative;
     width: 420px;
     height:450px;
-    background:linear-gradient(140deg,rgba(9, 43, 152, 0.25),rgb(7, 124, 156));;
+    background:linear-gradient(140deg,rgba(9, 43, 152, 0.25),rgb(7, 124, 156));
     box-shadow: 8px 0px 30px rgb(41, 42, 49), -15px -15px 60px rgb(52, 5, 123) ;
     backdrop-filter:blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -156,6 +156,26 @@ body
     -2px -2px 2px #452f4f;
    
    
+}
+.login {
+    position:absolute;
+    top:0%;
+    right:23%;
+    margin-top:16px;
+    font-size: 30px;
+    background:linear-gradient(140deg,rgba(9, 43, 152, 0.25),rgb(7, 124, 156));
+    border-radius: 50%;
+    width: auto;
+    height: 40px;
+}
+.login_butn a{
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: rgb(224, 225, 239);
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
  .search-box input
