@@ -61,10 +61,14 @@
 {
     position: absolute;
     bottom: 2%;
-    right:47%;
+    right:30%;
 }
 
-
+.mainContainer2 .details {
+    position: absolute;
+    bottom: 2%;
+    right:65%;
+}
 
 
 .from-box  .lm{

@@ -11,14 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     background: url(col.jpg) center / cover;
-}
-.home_button
-      {
-        top:0%;
-        justify-content:left;
-        position: relative;
-        font-size: 30px;
-    }  
+} 
 
 main.table{
     width: 82vw;
@@ -60,11 +53,6 @@ table{
 
 }
 
-/* .table-body:hover::-webkit-scrollbar-thumb{
-    border-radius: .5rem;
-    background-color: #0004;
-    
-} */
 table,th,td{
     border-collapse: collapse;
     padding: 1rem;
@@ -126,11 +114,19 @@ tbody tr:hover{
         min-width: 12.1rem;
     }
 }
+.home {
+    position: absolute;
+}
+.home_button {
+    font-size: 30px;
+    left: 100%;
+    
+} 
 
 .update {
     position:absolute;
     top:0%;
-    right:27%;
+    right:25%;
     margin-top:16px;
     font-size: 30px;
     background:rgb(214, 228, 236);
@@ -150,9 +146,9 @@ tbody tr:hover{
 .search-box input
 {
     position:absolute;
-    top: 2%;
+    top: 2.5%;
     right: 2%;
-    width: 300px;
+    width: 22%;
     height: 6%;
     background:#fff6;
     border:1px solid #100d16;
@@ -168,15 +164,20 @@ tbody tr:hover{
 .search-box  .icon-search
 {
     position:absolute;
-    top:0%;
+    top: 0.5%;
     right:0%;
-    margin-top:19px;
-    margin-right:40px;
+    margin-top:20px;
+    margin-right:30px;
     font-size: 30px;
     cursor: pointer;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
     color:blue;
     border: none;
     background-color: transparent;
+}
+.text {
+    font-size: 16px;
+    padding-left: 1%;
+    padding-right: 6%;
 }
