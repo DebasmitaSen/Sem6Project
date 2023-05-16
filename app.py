@@ -8,7 +8,7 @@ import cv2
 
 # Create a Flask Instance
 app = Flask(__name__)
-face_training = 0
+face_training = 1
 
 @app.route('/Data/<path:filename>')
 def data(filename):
