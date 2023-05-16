@@ -1,0 +1,148 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+body
+{
+    
+    background: #a23ef3;
+    
+}
+section{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    width: 100%;
+    
+}
+.home
+{   display: flex;
+    position:absolute;
+    top:2%;
+    right:2%;
+}
+ion-icon{
+    font-size: 30px;
+    color:#152179;
+}
+
+.form-back{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+}
+
+h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+.Input{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    
+}
+.Input label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+.Input input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+}
+.Input ion-icon{
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px;
+    font-size: .9em;
+    
+    cursor: pointer;
+}
+.forget a{
+    text-decoration: none;
+    color:white
+}
+.forget:hover{
+    text-decoration: underline #12cdc4;
+}
+
+.btn2{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    background-image: linear-gradient(to left,#12cbc4,#853ebe,#12cbc4);
+    transition: 0.6s;
+    color: white;
+    background-size: 200%;
+}
+.btn2:hover{
+    background-position: right;
+}
+.btn1{
+    padding: 0px 15px;
+    border: 2px solid #df28d5;
+    background: transparent;
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.btn1 a{
+    text-decoration: none;
+    color: white;
+}
+.btn1 span{
+    background: linear-gradient(to left,#df28d5,#5005fd);
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn1:hover span{
+    width: 100%;
+}
