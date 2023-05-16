@@ -9,18 +9,20 @@
 </head>    
 <body>    
     
-    <form>  
+    
         <div class="container">   
 			<center> <h1> Admin Login  </h1> </center>   <br>
+            <form method="post">  
             <label>Username : </label><br>   
             <input type="text" placeholder="Enter Username" name="username" required>  <br>
             <label>Password : </label> <br>  
             <input type="password" placeholder="Enter Password" name="password" required> <br> 
-            <button type="submit">Login</button> <br>   
+            <button type="submit">Login</button> <br>  
+            </form>  
             <center><span class="home_button">
                 <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
               </span></center>  
         </div>   
-    </form>     
+        
 </body>     
 </html> 

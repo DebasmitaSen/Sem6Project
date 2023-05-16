@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory, url_for, Response, jsonify
+from flask import Flask, render_template, request, send_from_directory, url_for, Response, jsonify, redirect, session
 import db_conn
 import db_execute_query
 from imgcapture import imcapture
@@ -8,6 +8,8 @@ import cv2
 
 # Create a Flask Instance
 app = Flask(__name__)
+app.secret_key = 'secretkey'
+
 face_training = 1
 
 @app.route('/Data/<path:filename>')
@@ -86,8 +88,8 @@ def video_feed():
 
 @app.route("/start")
 def start():
+    global face_training
     if face_training == 1:
-        global face_training 
         face_training = 0
         return render_template('preloader.html')
     else:
@@ -118,9 +120,31 @@ def get_data():
     data = [id, name, total_attendence]
     return data
 
-@app.route("/login")
+@app.route("/login", methods = ["GET", "POST"])
 def login():
+    if request.method == 'POST' :
+        session.pop('user_id', None)
+        username = request.form['username']
+        password = request.form['password']
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+        query = "select login_id, password from login where username = %s"
+        results = db_execute_query.read_query(connection, query, username)
+        connection.close()
+        if not results :
+            return redirect(url_for('login'))
+        for row in results:
+            login_id, passwd = row
+        if passwd == password :
+            session['user_id'] = login_id
+            return redirect(url_for('dashboard'))
+        return redirect(url_for('login'))
+
     return render_template('login.html')
+
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__' :
     app.run(debug=True)
