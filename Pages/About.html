@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>face recognation</title>
+    <link rel="stylesheet" type="text/css" href="about.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+   <div class="container">
+     <div class="navber">
+        <img src="logo.png" class="logo">
+          <div class="home">
+            <span class="homo">
+               <a href="{{ url_for('home') }}"> <ion-icon name="home"></ion-icon></a>
+            </span>
+          </div>
+     </div>   
+    
+    <div class="row">
+      <div class="col">
+         <h1>ABOUT US</h1>
+         <p>Hello,Welcome to our automated attendence system.
+            This can register your face by stand in front of camera.
+            But,first you have to register your picture in the system. 
+         </p>
+         <button type="button">Read More</button>
+      </div>
+      <div class="col">
+         <div class="card">
+            <img src="debasmita.jpg">
+            <div class="details">
+               <h1>Debasmita Sen</h1>
+               <p>Topper in the class. C.u.Roll-203432-8584-00</p>
+            </div>
+         </div> 
+         <div class="card">
+           <img src="rahul.jpg">
+           <div class="details">
+              <h1>Rahul<br> Pal</h1>
+              <p>Topper in the class. C.u.Roll-203432-8584-00</p>
+           </div>
+          </div>
+         <div class="card">
+           <img src="rajdip.jpeg">
+           <div class="details">
+              <h1>Rajdip Khan</h1>
+              <p>Topper in the class. C.u.Roll-203432-8584-00</p>
+           </div>
+         </div>
+         <div class="card">
+           <img src="romit.jpeg">
+           <div class="details">
+              <h2>Romit Bhattacharjee</h2>
+              <p>Topper in the class. C.u.Roll-203432-8584-00</p>
+           </div>
+     </div>
+   </div>
+</body>
+</html>
