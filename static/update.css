@@ -102,6 +102,16 @@
     height:4px;
     width:80%;
 }
+.input-box2 .line
+{
+    position: absolute;
+    top:33%;
+    right:10%;
+
+    background: #040541;
+    height:4px;
+    width:80%;
+}
  .input-box label
 {
     position: absolute;
@@ -127,6 +137,18 @@
     pointer-events:none;
     transition: 5s;
 }
+.input-box2 label
+{
+    position: absolute;
+    top: 30%;
+    right:12%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:#48bfe3;
+    font-weight: 500;
+    pointer-events:none;
+    transition: 5s;
+}
 
 .input-box input:focus~label,
 .input-box input:valid~label
@@ -138,6 +160,12 @@
 .input-box1 input:valid~label
 {
     top: 55px;
+
+}
+.input-box2 input:focus~label,
+.input-box2 input:valid~label
+{
+    top: 60px;
 
 }
 
@@ -172,6 +200,18 @@
     text-decoration:solid;
     font-size: 16px;
 }
+.input-box2 input
+{
+    position: absolute;
+    top: 27%;
+    left:32%;
+    background: transparent;
+    border:none;
+    outline: none;
+    text-align:left;
+    text-decoration:solid;
+    font-size: 16px;
+}
 
 .from-box button
 {
@@ -195,6 +235,11 @@
 {
     position:absolute;
     top:55%;
+}
+.input-box2 .id-ion
+{
+    position:absolute;
+    top:25%;
 }
 .video {
     width: 500px;
