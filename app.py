@@ -8,6 +8,7 @@ import cv2
 
 # Create a Flask Instance
 app = Flask(__name__)
+face_training = 0
 
 @app.route('/Data/<path:filename>')
 def data(filename):
@@ -34,6 +35,8 @@ def update():
         image_manupulation.insert_to_db()
         image_manupulation.crbk()
         updated = True
+        global face_training
+        face_training = 1
     return render_template('update.html', updated = updated)
 
 
@@ -82,8 +85,13 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route("/start")
-def start(): 
-    return render_template('preloader.html')
+def start():
+    if face_training == 1:
+        global face_training 
+        face_training = 0
+        return render_template('preloader.html')
+    else:
+        return render_template('start.html')
     
 @app.route("/face_train", methods = ["POST"])
 def face_train_():

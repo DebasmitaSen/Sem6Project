@@ -9,52 +9,55 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-
 <body>
-    <div class="home">
-        <span class="homo">
-           <a href="{{ url_for('home') }}"> <ion-icon name="home"></ion-icon></a>
-        </span>
-    </div>
-
-    <div class="scan">
-        <div class="face"></div>
-        <div class="dots"></div>
-    </div>
-      
-    <div class="section">
-
-        <div class="romit">
-            <article>
-                 <img src="{{ url_for('static', filename = 'romit.jpeg') }}">
-                 <h4>Romit Bhattacharjee</h4>
-            </article>
-        </div>
-
-        <div class="Debasmita">
-            <article>
-                <h4>Debasmita Sen</h4>
-                 <img src="{{ url_for('static', filename = 'debasmita.jpg') }}"> 
-            </article>
-        </div>
-
-        <div class="rahul">
-            <article>
-                <h4>Rahul Pal</h4>
-                 <img src="{{ url_for('static', filename = 'rahul.jpg') }}"> 
-            </article>
-        </div>
-
-        <div class="rajdeep">
-            <article>
-                <h4>Rajdip Khan</h4>
-                 <img src="{{ url_for('static', filename = 'rajdip.jpeg') }}"> 
-            </article>
-        </div>
-
-
-    </div>
-
+   <div class="container">
+     <div class="navber">
+        <img src="{{ url_for('static', filename = 'logo.png') }}" class="logo">
+          <div class="home">
+            <span class="homo">
+               <a href="{{ url_for('home') }}"> <ion-icon name="home"></ion-icon></a>
+            </span>
+          </div>
+     </div>   
     
+    <div class="row">
+      <div class="col">
+         <h1>ABOUT US</h1>
+         <p>Hello,Welcome to our automated attendence system.
+            This can register your face by stand in front of camera.
+            But,first you have to register your picture in the system. 
+         </p>
+         <button type="button">Read More</button>
+      </div>
+      <div class="col">
+         <div class="card">
+            <img src="{{ url_for('static', filename = 'debasmita.jpg') }}">
+            <div class="details">
+               <h1>Debasmita</h1>
+               <p>C.U.Roll-203432-8584-00</p>
+            </div>
+         </div> 
+         <div class="card">
+           <img src="{{ url_for('static', filename = 'rahul.jpg') }}">
+           <div class="details">
+              <h1>Rahul</h1>
+              <p>C.U.Roll-203432-8584-00</p>
+           </div>
+          </div>
+         <div class="card">
+           <img src="{{ url_for('static', filename = 'rajdip.jpeg') }}">
+           <div class="details">
+              <h1>Rajdip</h1>
+              <p>C.U.Roll-203432-8584-00</p>
+           </div>
+         </div>
+         <div class="card">
+           <img src="{{ url_for('static', filename = 'romit.jpeg') }}">
+           <div class="details">
+              <h2>Romit</h2>
+              <p>C.U.Roll-203432-8584-00</p>
+           </div>
+     </div>
+   </div>
 </body>
 </html>

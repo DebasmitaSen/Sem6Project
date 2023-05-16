@@ -23,6 +23,7 @@ def face_train():
 
     name2, classid, encoded_face_train = findencoding.find_encoding()
 
+face_train()
 
 # initialize dlib's face detector and landmark predictor
 detector = dlib.get_frontal_face_detector()
