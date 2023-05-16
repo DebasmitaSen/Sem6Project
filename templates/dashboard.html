@@ -38,116 +38,16 @@
                         <th >Semester</th>
                     </tr>
                 </thead>
+
+                {% for result in results %}
                 <tbody>
                    <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem4">Sem 4</p></td>
+                    <td >{{ result[0] }}</td>
+                    <td >{{ result[1] }}</td>
+                    <td >{{ result[3] }}</td>
+                    <td ><p class="status sem{{ result[2] }}">Sem {{ result[2] }}</p></td>
                    </tr> 
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem6">Sem 6</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem5">Sem 5</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem3">Sem 3</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem2">Sem 2</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem1">Sem 1</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem4">Sem 4</p></td>
-                   </tr> 
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem6">Sem 6</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem5">Sem 5</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem4">Sem 4</p></td>
-                   </tr> 
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem6">Sem 6</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem5">Sem 5</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem4">Sem 4</p></td>
-                   </tr> 
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem6">Sem 6</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem5">Sem 5</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem4">Sem 4</p></td>
-                   </tr> 
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem6">Sem 6</p></td>
-                   </tr>
-                   <tr>
-                    <td >79</td>
-                    <td >Debasmita</td>
-                    <td >10</td>
-                    <td ><p class="status sem5">Sem 5</p></td>
-                   </tr>
-                  
+                {% endfor %}
                 </tbody>
             </table>
         </section>

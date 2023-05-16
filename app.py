@@ -33,8 +33,9 @@ def update():
     if (request.method == 'POST'):
         id = request.form['id']
         name = request.form['name']
+        sem = request.form['sem']
         imcapture(id, name, camera)
-        image_manupulation.insert_to_db()
+        image_manupulation.insert_to_db(sem)
         image_manupulation.crbk()
         updated = True
         global face_training
@@ -142,9 +143,19 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods = ['GET', 'POST'])
 def dashboard():
-    return render_template('dashboard.html')
+    connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+    query = "select * from total_attendence"
+    details = db_execute_query.read_query_(connection, query)
+    if request.method == 'POST':
+        sem = request.form['sem']
+        if sem == 'all':
+            return render_template('dashboard.html', results = details)
+        query = "select * from total_attendence where semester = %s"
+        details = db_execute_query.read_query(connection, query, sem)
+    connection.close()
+    return render_template('dashboard.html', results = details)
 
 if __name__ == '__main__' :
     app.run(debug=True)

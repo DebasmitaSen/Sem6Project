@@ -2,7 +2,7 @@ import os
 import db_conn
 import db_execute_query
 
-def insert_to_db():
+def insert_to_db(sem):
 
    # establish a MySQL connection
    db = db_conn.create_db_connection("localhost", "root", "", "students_details")
@@ -39,12 +39,12 @@ def insert_to_db():
          img_path = 'Data/'
          img_path = img_path + Id
          try:
-            query = "INSERT INTO student_info (id, name, image_path) VALUES (%s,%s,%s)"
-            values = (Id,name,img_path)
+            query = "INSERT INTO student_info (id, name, semester, image_path) VALUES (%s,%s,%s,%s)"
+            values = (Id, name, sem, img_path)
             cursor.execute(query, values)
             db.commit()
-            query_2 = "insert into total_attendence(id, name, total_att) values (%s, %s, 0)"
-            value = (Id, name)
+            query_2 = "insert into total_attendence(id, name, semester, total_att) values (%s, %s, %s, 0)"
+            value = (Id, name, sem)
             cursor.execute(query_2, value)
             db.commit()
          except:

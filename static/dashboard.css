@@ -115,12 +115,19 @@ tbody tr:hover{
     }
 }
 .home {
-    position: absolute;
+    position:absolute;
+    top:0.5%;
+    right:32%;
+    margin-top:16px;
 }
 .home_button {
     font-size: 30px;
-    left: 100%;
-    
+    background-color: transparent;
+    border: none;
+    color:rgb(70, 27, 223);
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;   
 } 
 
 .update {
