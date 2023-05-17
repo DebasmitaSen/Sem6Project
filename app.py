@@ -29,18 +29,29 @@ camera = cv2.VideoCapture(0)
 
 @app.route("/update", methods = ['GET', 'POST'])
 def update():
+    added = False
     updated = False
     if (request.method == 'POST'):
         id = request.form['id']
         name = request.form['name']
         sem = request.form['sem']
+        db = db_conn.create_db_connection("localhost", "root", "", "students_details")
+        query_1 = "select id from student_info"
+        results = db_execute_query.read_query_(db, query_1)
+        id_list = []
+        for rw in results:
+            row, = rw
+            id_list.append(row)
         imcapture(id, name, camera)
-        image_manupulation.insert_to_db(sem)
+        image_manupulation.insert_to_db(sem, id_list)
         image_manupulation.crbk()
-        updated = True
+        if id in id_list:
+            updated = True
+        else :
+            added = True
         global face_training
         face_training = 1
-    return render_template('update.html', updated = updated)
+    return render_template('update.html', added = added, updated = updated)
 
 
 @app.route("/details", methods = ['GET', 'POST'])

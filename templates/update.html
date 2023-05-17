@@ -33,29 +33,38 @@
             </span>
             
             <div class="from-box">
-                {% if updated %}
+                {% if added %}
                 <span class="lm"><h4>Added to database</h4></span>
                 {% endif %}
+                {% if updated %}
+                <span class="lm"><h4>Updated Successfully</h4></span>
+                {% endif %}
+                <br>
                 <form action="/update" method="post">
-                    <div class="input-box">
-                        <!-- username-->
-                         <label for="username">Name</label>
-                         <div class="pr-ion">
-                            <ion-icon name="person"></ion-icon>
-                         </div> 
-
+                    <!-- name -->
+                   <div class="input-box">
+                    <div class="line">
                         
-                            <input type="text" placeholder="enter-name" name="name" required>
-                      
-                   </div>
+                    </div>
+                    
+                    
+                     <label for="name">Name</label> 
+                     <div class="pr-ion"><ion-icon name="person"></ion-icon>
+                </div>
+                    
+                        <input type="text" placeholder="enter-name" name="name" required>
+                   
+                    
+                </div>
                    
                     <br><br><br>
+                    <!--Id-->
                     <div class="input-box1">
                         <div class="line">
                             
                         </div>
                         
-                        <!--Id-->
+                        
                          <label for="Id">Id</label> 
                          <div class="id-ion"><ion-icon name="albums"></ion-icon>
                     </div>
@@ -66,12 +75,13 @@
                     </div>
 
                     <br><br><br>
+                    <!--sem-->
                     <div class="input-box2">
                         <div class="line">
                             
                         </div>
                         
-                        <!--sem-->
+                        
                          <label for="sem">Sem</label> 
                          <div class="id-ion"><ion-icon name="albums"></ion-icon>
                     </div>
@@ -82,7 +92,7 @@
                     </div>
                     
 
-                    <br><br>
+                    
                     <button type="submit">Submit</button>
                 </form>
             </div>

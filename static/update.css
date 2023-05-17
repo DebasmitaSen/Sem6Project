@@ -84,18 +84,19 @@
     color: rgb(87, 201, 170);
     
 }
- .input-box
- {
+.input-box .line {
     position: absolute;
-    width: 80%;
-    height: 40%;
-    border-bottom: 4px solid #040532;
-} 
+    top: 56%;
+    right:10%;
 
+    background: #040541;
+    height:4px;
+    width:80%;
+}
 .input-box1 .line
 {
     position: absolute;
-    top:63%;
+    top:69%;
     right:10%;
 
     background: #040541;
@@ -105,7 +106,7 @@
 .input-box2 .line
 {
     position: absolute;
-    top:33%;
+    top: 41.5%;
     right:10%;
 
     background: #040541;
@@ -115,8 +116,8 @@
  .input-box label
 {
     position: absolute;
-    top: 90%;
-    right:5px;
+    top : 51%;
+    right:12%;
     transform: translateY(-50%);
     font-size: 18px;
     color:#48bfe3;
@@ -128,7 +129,7 @@
 .input-box1 label
 {
     position: absolute;
-    top: 60%;
+    top: 38%;
     right:12%;
     transform: translateY(-50%);
     font-size: 18px;
@@ -140,7 +141,7 @@
 .input-box2 label
 {
     position: absolute;
-    top: 30%;
+    top: 65%;
     right:12%;
     transform: translateY(-50%);
     font-size: 18px;
@@ -178,8 +179,8 @@
 .input-box input
 {
     position: absolute;
-    top: 87%;
-    left:30%;
+    top: 50%;
+    left:33%;
     
     background: transparent;
     border:none;
@@ -191,7 +192,7 @@
 .input-box1 input
 {
     position: absolute;
-    top: 57%;
+    top: 36%;
     left:35%;
     background: transparent;
     border:none;
@@ -203,7 +204,7 @@
 .input-box2 input
 {
     position: absolute;
-    top: 27%;
+    top: 62%;
     left:32%;
     background: transparent;
     border:none;
@@ -216,7 +217,7 @@
 .from-box button
 {
     position: absolute;
-    top:75%;
+    top:77%;
     width: 30%;
     height: 6%;
     left: 140px;
@@ -228,18 +229,18 @@
 }
 .input-box .pr-ion
 {
-    position:absolute;
-    top:80%;
+    position:absolute; 
+    top:48%;
 } 
 .input-box1 .id-ion
 {
     position:absolute;
-    top:55%;
+    top:61%;
 }
 .input-box2 .id-ion
 {
     position:absolute;
-    top:25%;
+    top:35%;
 }
 .video {
     width: 500px;
