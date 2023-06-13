@@ -1,28 +1,42 @@
-<!DOCTYPE html>   
-<html>   
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<link rel="stylesheet" href="{{ url_for('static', filename = 'login.css') }}">
-<title> Login Page </title>  
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</head>    
-<body>    
-    
-    
-        <div class="container">   
-			<center> <h1> Admin Login  </h1> </center>   <br>
-            <form method="post">  
-            <label>Username : </label><br>   
-            <input type="text" placeholder="Enter Username" name="username" required>  <br>
-            <label>Password : </label> <br>  
-            <input type="password" placeholder="Enter Password" name="password" required> <br> 
-            <button type="submit">Login</button> <br>  
-            </form>  
-            <center><span class="home_button">
-                <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
-              </span></center>  
-        </div>   
-        
-</body>     
-</html> 
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'login.css') }}">
+  <title> Login Page </title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  {% if login_success %}
+  <script>
+    swal({
+      title: "Invalid Username or Password!",
+      text: "Check your Username and password and try again!",
+      icon: "warning",
+    });
+  </script>
+  {% endif %}
+
+  <div class="container">
+    <center>
+      <h1> Admin Login </h1>
+    </center> <br>
+    <form method="post">
+      <label>Username : </label><br>
+      <input type="text" placeholder="Enter Username" name="username" required> <br>
+      <label>Password : </label> <br>
+      <input type="password" placeholder="Enter Password" name="password" required> <br>
+      <button type="submit">Login</button> <br>
+    </form>
+    <center><span class="home_button">
+        <a href="{{ url_for('home') }}"><ion-icon name="home"></ion-icon></a>
+      </span></center>
+  </div>
+
+</body>
+
+</html>

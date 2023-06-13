@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename = 'details.css') }}">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     
@@ -41,7 +42,11 @@
                     </form>
                     {% if no_data %}
                     <script>
-                        alert("No student found for the ID");
+                        swal({
+                            title: "No Student Found!",
+                            text: "Check the student ID and try again!",
+                            icon: "warning",
+                            });
                     </script>
                     {% endif %} 
                 </div>

@@ -226,3 +226,19 @@ ion-icon{
     color: #040541;
 }
 
+.swal-overlay {
+    background-color: #43288683;
+}
+
+.swal-modal {
+background-color: #923ee1;
+border: 3px solid white;
+}
+
+.swal-text {
+    margin: 22px;
+    text-align: center;
+    color: #e3d9d6;
+    padding: 17px;
+    display: block;
+  }

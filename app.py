@@ -134,6 +134,7 @@ def get_data():
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
+    login = False
     if request.method == 'POST' :
         session.pop('user_id', None)
         username = request.form['username']
@@ -142,16 +143,17 @@ def login():
         query = "select login_id, password from login where username = %s"
         results = db_execute_query.read_query(connection, query, username)
         connection.close()
+        login = True
         if not results :
-            return redirect(url_for('login'))
+            return render_template('login.html', login_success = login)
         for row in results:
             login_id, passwd = row
         if passwd == password :
             session['user_id'] = login_id
             return redirect(url_for('dashboard'))
-        return redirect(url_for('login'))
+        return render_template('login.html', login_success = login)
 
-    return render_template('login.html')
+    return render_template('login.html', login_success = login)
 
 
 @app.route('/dashboard', methods = ['GET', 'POST'])
