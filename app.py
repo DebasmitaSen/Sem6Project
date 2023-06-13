@@ -24,7 +24,7 @@ def home():
 def about():
     return render_template('about.html')
 
-# camera = cv2.VideoCapture("http://192.168.30.73:4747/video")
+# camera = cv2.VideoCapture("http://192.168.67.122:4747/video")
 camera = cv2.VideoCapture(0)
 
 @app.route("/update", methods = ['GET', 'POST'])
@@ -85,13 +85,11 @@ def generate_frames(camera):
         if not success:
             break
         else:
-            # do face recognition here
-            # draw a rectangle around the detected face(s) on the frame
             # convert the frame to bytes for streaming
-            ret, buffer = cv2.imencode('.jpg', frame)
+            ret, buffer = cv2.imencode('.png', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                   b'Content-Type: image/png\r\n\r\n' + frame + b'\r\n')
 
 @app.route('/video_feed')
 def video_feed():
