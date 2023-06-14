@@ -18,6 +18,7 @@ def data(filename):
 
 @app.route("/")
 def home():
+    session.pop('user_id', None)
     return render_template('home.html')
 
 @app.route("/about")
@@ -29,6 +30,8 @@ camera = cv2.VideoCapture(0)
 
 @app.route("/update", methods = ['GET', 'POST'])
 def update():
+    if not session.get('user_id') :
+        return redirect("/login")
     added = False
     updated = False
     if (request.method == 'POST'):
@@ -134,7 +137,6 @@ def get_data():
 def login():
     login = False
     if request.method == 'POST' :
-        session.pop('user_id', None)
         username = request.form['username']
         password = request.form['password']
         connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
@@ -156,6 +158,8 @@ def login():
 
 @app.route('/dashboard', methods = ['GET', 'POST'])
 def dashboard():
+    if not session.get('user_id') :
+        return redirect("/login")
     connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
     query = "select * from total_attendence"
     details = db_execute_query.read_query_(connection, query)
