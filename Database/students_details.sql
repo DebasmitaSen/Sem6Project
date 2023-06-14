@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 03:36 PM
+-- Generation Time: Jun 14, 2023 at 05:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -73,7 +73,15 @@ INSERT INTO `attendence` (`sl_no`, `id`, `name`, `login_info`) VALUES
 (35, 95, 'Rahul', '2023-05-12 08:07:43'),
 (36, 22, 'Romit', '2023-05-12 08:08:13'),
 (37, 87, 'kusal paul', '2023-05-12 08:08:53'),
-(38, 123, 'dilar', '2023-05-12 08:11:45');
+(38, 123, 'dilar', '2023-05-12 08:11:45'),
+(39, 79, 'Debasmita', '2023-05-16 19:18:30'),
+(40, 11, 'ssm', '2023-05-16 19:21:12'),
+(41, 95, 'Rahul', '2023-05-18 15:56:14'),
+(42, 95, 'Rahul', '2023-06-04 08:46:29'),
+(43, 95, 'Rahul', '2023-06-13 15:31:21'),
+(44, 95, 'Rahul', '2023-06-14 03:35:20'),
+(45, 22, 'Romit', '2023-06-14 03:36:01'),
+(46, 87, 'kusal paul', '2023-06-14 03:39:33');
 
 -- --------------------------------------------------------
 
@@ -103,6 +111,7 @@ INSERT INTO `login` (`login_id`, `username`, `password`) VALUES
 CREATE TABLE `student_info` (
   `id` int(15) NOT NULL,
   `name` varchar(30) NOT NULL,
+  `semester` int(11) NOT NULL,
   `image_path` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -110,16 +119,16 @@ CREATE TABLE `student_info` (
 -- Dumping data for table `student_info`
 --
 
-INSERT INTO `student_info` (`id`, `name`, `image_path`) VALUES
-(11, 'ssm', 'Data/11'),
-(22, 'Romit', 'Data/22'),
-(23, 'Brotin', 'Data/23'),
-(61, 'Anirban', 'Data/61'),
-(79, 'Debasmita', 'Data/79'),
-(87, 'kusal paul', 'Data/87'),
-(95, 'Rahul', 'Data/95'),
-(105, 'Rajdip', 'Data/105'),
-(123, 'dilar', 'Data/123');
+INSERT INTO `student_info` (`id`, `name`, `semester`, `image_path`) VALUES
+(11, 'ssm', 2, 'Data/11'),
+(22, 'Romit', 6, 'Data/22'),
+(23, 'Brotin', 2, 'Data/23'),
+(61, 'Anirban', 2, 'Data/61'),
+(79, 'Debasmita', 6, 'Data/79'),
+(87, 'kusal paul', 4, 'Data/87'),
+(95, 'Rahul', 6, 'Data/95'),
+(105, 'Rajdip', 4, 'Data/105'),
+(123, 'dilar', 4, 'Data/123');
 
 -- --------------------------------------------------------
 
@@ -130,6 +139,7 @@ INSERT INTO `student_info` (`id`, `name`, `image_path`) VALUES
 CREATE TABLE `total_attendence` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `semester` int(11) NOT NULL,
   `total_att` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -137,16 +147,16 @@ CREATE TABLE `total_attendence` (
 -- Dumping data for table `total_attendence`
 --
 
-INSERT INTO `total_attendence` (`id`, `name`, `total_att`) VALUES
-(11, 'ssm', 1),
-(22, 'Romit', 5),
-(23, 'Brotin', 2),
-(61, 'Anirban', 3),
-(79, 'Debasmita', 5),
-(87, 'kusal paul', 4),
-(95, 'Rahul', 12),
-(105, 'Rajdip', 3),
-(123, 'dilar', 1);
+INSERT INTO `total_attendence` (`id`, `name`, `semester`, `total_att`) VALUES
+(11, 'ssm', 2, 2),
+(22, 'Romit', 6, 6),
+(23, 'Brotin', 2, 2),
+(61, 'Anirban', 2, 3),
+(79, 'Debasmita', 6, 6),
+(87, 'kusal paul', 4, 5),
+(95, 'Rahul', 6, 16),
+(105, 'Rajdip', 4, 3),
+(123, 'dilar', 4, 1);
 
 --
 -- Indexes for dumped tables
@@ -186,7 +196,7 @@ ALTER TABLE `total_attendence`
 -- AUTO_INCREMENT for table `attendence`
 --
 ALTER TABLE `attendence`
-  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `login`
