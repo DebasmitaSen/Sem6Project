@@ -39,13 +39,13 @@ def insert_to_db(sem, id_list):
          img_path = 'Data/'
          img_path = img_path + Id
          try:
-            if Id in id_list :
+            if int(Id) in id_list :
                query = "Update student_info set name = %s, semester = %s where id = %s"
                values = (name, sem, Id)
                db_execute_query.execute_query(db, query, values)
                query_2 = "update total_attendence set name = %s, semester = %s where id = %s"
                value = (name, sem, Id)
-               db_execute_query.execute_query(db, query, value)
+               db_execute_query.execute_query(db, query_2, value)
             else:
                query = "INSERT INTO student_info (id, name, semester, image_path) VALUES (%s,%s,%s,%s)"
                values = (Id, name, sem, img_path)
@@ -87,3 +87,9 @@ def crbk():
   for filename in image_files:
     if os.path.isdir(os.path.join(folder_path, filename)):
      os.remove(os.path.join(folder_path, filename))
+
+def remove_file(path) :
+   folder_path = "D:/Face_recognization_project/Sem6Project/"
+   folder_path = folder_path + path
+   import shutil
+   shutil.rmtree(folder_path)

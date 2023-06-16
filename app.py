@@ -45,13 +45,17 @@ def update():
         for rw in results:
             row, = rw
             id_list.append(row)
-        imcapture(id, name, camera)
-        image_manupulation.insert_to_db(sem, id_list)
-        image_manupulation.crbk()
-        if id in id_list:
+        imcapture(id, name, camera)        
+        if int(id) in id_list:
             updated = True
+            path = 'Data/' + id
+            image_manupulation.remove_file(path)
+            image_manupulation.insert_to_db(sem, id_list)
+            image_manupulation.crbk()
         else :
             added = True
+            image_manupulation.insert_to_db(sem, id_list)
+            image_manupulation.crbk()
         global face_training
         face_training = 1
     return render_template('update.html', added = added, updated = updated)
@@ -135,6 +139,8 @@ def get_data():
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
+    if session.get('user_id') :
+        return redirect("/dashboard")
     login = False
     if request.method == 'POST' :
         username = request.form['username']
