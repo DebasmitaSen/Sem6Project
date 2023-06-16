@@ -114,17 +114,19 @@ tbody tr:hover{
         min-width: 12.1rem;
     }
 }
-.home {
+.home{
     position:absolute;
     top:0.5%;
-    right:32%;
+    right:34%;
     margin-top:16px;
+    border-radius: 20px;
+    width: auto;
+    height: 40px;
 }
-.home_button {
+.home_button a{
     font-size: 30px;
     background-color: transparent;
     border: none;
-    color:rgb(70, 27, 223);
     padding: 20px;
     cursor: pointer;
     text-decoration: none;   
@@ -178,7 +180,6 @@ tbody tr:hover{
     font-size: 30px;
     cursor: pointer;
     z-index: 1;
-    /* overflow: hidden; */
     color:blue;
     border: none;
     background-color: transparent;
