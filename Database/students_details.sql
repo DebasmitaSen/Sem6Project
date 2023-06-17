@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2023 at 05:56 AM
+-- Generation Time: Jun 16, 2023 at 08:58 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -137,6 +137,7 @@ INSERT INTO `student_info` (`id`, `name`, `semester`, `image_path`) VALUES
 --
 
 CREATE TABLE `total_attendence` (
+  `sl_no` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `semester` int(11) NOT NULL,
@@ -147,16 +148,16 @@ CREATE TABLE `total_attendence` (
 -- Dumping data for table `total_attendence`
 --
 
-INSERT INTO `total_attendence` (`id`, `name`, `semester`, `total_att`) VALUES
-(11, 'ssm', 2, 2),
-(22, 'Romit', 6, 6),
-(23, 'Brotin', 2, 2),
-(61, 'Anirban', 2, 3),
-(79, 'Debasmita', 6, 6),
-(87, 'kusal paul', 4, 5),
-(95, 'Rahul', 6, 16),
-(105, 'Rajdip', 4, 3),
-(123, 'dilar', 4, 1);
+INSERT INTO `total_attendence` (`sl_no`, `id`, `name`, `semester`, `total_att`) VALUES
+(1, 11, 'ssm', 2, 2),
+(2, 22, 'Romit', 6, 6),
+(3, 23, 'Brotin', 2, 2),
+(4, 61, 'Anirban', 2, 3),
+(5, 79, 'Debasmita', 6, 6),
+(6, 87, 'kusal paul', 4, 5),
+(7, 95, 'Rahul', 6, 16),
+(8, 105, 'Rajdip', 4, 3),
+(9, 123, 'dilar', 4, 1);
 
 --
 -- Indexes for dumped tables
@@ -186,7 +187,8 @@ ALTER TABLE `student_info`
 -- Indexes for table `total_attendence`
 --
 ALTER TABLE `total_attendence`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`sl_no`),
+  ADD KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -205,6 +207,12 @@ ALTER TABLE `login`
   MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `total_attendence`
+--
+ALTER TABLE `total_attendence`
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -213,6 +221,12 @@ ALTER TABLE `login`
 --
 ALTER TABLE `attendence`
   ADD CONSTRAINT `attendence_ibfk_1` FOREIGN KEY (`id`) REFERENCES `student_info` (`id`);
+
+--
+-- Constraints for table `total_attendence`
+--
+ALTER TABLE `total_attendence`
+  ADD CONSTRAINT `total_attendence_ibfk_1` FOREIGN KEY (`id`) REFERENCES `student_info` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
