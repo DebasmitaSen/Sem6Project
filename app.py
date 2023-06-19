@@ -65,24 +65,25 @@ def update():
 def details():
     id = '' 
     name = ''
+    sem = ''
     total_attendence = ''
     image = url_for('static', filename = 'person.png')
     if(request.method == 'POST') :       
         id = request.form['id']
         connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
-        query = "select name, total_att from total_attendence where id = %s"
+        query = "select name, semester, total_att from total_attendence where id = %s"
         results = db_execute_query.read_query(connection, query, id)
         if not results:
             image = url_for('static', filename = 'person.png')
             return render_template('details.html', no_data = True, image = image)
         
         for row in results:
-            name, total_attendence = row
+            name, sem, total_attendence = row
         connection.close()
         path_1st_image = '/img1.jpg'
         path_1st_image = id + path_1st_image
         image = url_for('data', filename = path_1st_image)
-        return render_template('details.html', id = id, name = name, attendence = total_attendence, image = image)
+        return render_template('details.html', id = id, name = name, attendence = total_attendence, image = image, sem = sem)
     
     return render_template('details.html', image = image)
 
@@ -177,6 +178,27 @@ def dashboard():
         details = db_execute_query.read_query(connection, query, sem)
     connection.close()
     return render_template('dashboard.html', results = details)
+
+@app.route('/<int:id>/student_dashboard', methods = ['GET', 'POST'])
+def student_dashboard(id):
+    if not session.get('user_id') :
+        return redirect("/login")
+    
+    connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+    query = "select DATE(`login_info`) AS Date, TIME(`login_info`) AS Time from attendence where id = %s"
+    details = db_execute_query.read_query(connection, query, id)
+
+    query_2 = "select name, semester, total_att from total_attendence where id = %s"
+    detail = db_execute_query.read_query(connection, query_2, id)
+    connection.close()
+    for row in detail :
+            name, sem, total_attendence = row
+    
+    path_1st_image = '/img1.jpg'
+    path_1st_image = str(id) + path_1st_image
+    image = url_for('data', filename = path_1st_image)
+
+    return render_template('student_dashboard.html', results = details, name = name, total_attendence = total_attendence, sem = sem, image = image, id = id)
 
 if __name__ == '__main__' :
     app.run(debug=True)

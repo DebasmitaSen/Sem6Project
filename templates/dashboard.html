@@ -36,6 +36,7 @@
                         <th >Name</th>
                         <th >Total Attendance</th>
                         <th >Semester</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
 
@@ -46,9 +47,10 @@
                     <td >{{ result[1] }}</td>
                     <td >{{ result[3] }}</td>
                     <td ><p class="status sem{{ result[2] }}">Sem {{ result[2] }}</p></td>
+                    <td><a href="/{{ result[0] }}/student_dashboard"><ion-icon class="info" name="information-circle-outline"></ion-icon></a></td>
                    </tr> 
-                {% endfor %}
                 </tbody>
+                {% endfor %}
             </table>
         </section>
 

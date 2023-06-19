@@ -201,17 +201,22 @@
     text-decoration:solid;
     font-size: 16px;
 }
-.input-box2 input
+.input-box2 select
 {
     position: absolute;
-    top: 62%;
-    left:32%;
+    top: 58%;
+    left:37%;
     background: transparent;
     border:none;
     outline: none;
     text-align:left;
     text-decoration:solid;
-    font-size: 16px;
+    font-size: 20px;
+    padding: 15px;
+}
+
+option {
+    background-color: #352e6f;
 }
 
 .from-box button
