@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face Recognizing</title>
+    <title>Preloader</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'preloader.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body class="body">
-    <div class="text"><center>Please wait <br> Loading........</center></div>
-    <div id = "loader"></div>
-    
+<body>
     <script>
-    $(document).ready(function() {
-        // Show preloader
-        $("#loader").show();
-        // Send AJAX request to Flask app
-        $.ajax({
-          type: "POST",
-          url: "/face_train",
-          success: function(data) {
-            // Hide preloader
-            $("#loader").hide();
-            window.location.replace("{{ url_for('Start') }}");
-          }
-        });
-      });
+        $(document).ready(function() {
+            // Show preloader
+            $("#loader").show();
+            // Send AJAX request to Flask app
+            $.ajax({
+              type: "POST",
+              url: "/face_train",
+              success: function(data) {
+                // Hide preloader
+                $("#loader").hide();
+                window.location.replace("{{ url_for('Start') }}");
+              }
+            });
+          });
     </script>
-
+    <div class="container" id="loader">
+        <div class="text">
+            Loading....
+            Please Wait.
+        </div>
+        <div class="loading">
+            <div class="linebox">
+                <div class="line"></div>
+            </div>
+            <span class="loadingvalue">0%</span>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename = 'preloader.js') }}"></script>
 </body>
 </html>

@@ -1,15 +1,48 @@
-#loader {
-    width: 100%;
+body{
+    background: rgb(0, 0, 0) url(face-id-glitch.gif) no-repeat center;
     height: 100vh;
-    background: #000000
-    url(face-id-glitch.gif)
-    no-repeat center;
+    font-family: sans-serif;
 }
-.body{
-    background-color: #000000;
-}
-.text {
+.text{
+    color: white;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
     font-size: 40px;
-    color: #ffffff;
-    z-index: 9999;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding-bottom: 90px;
+}
+.loading .linebox{
+    padding: 2px;
+    height: 20px;
+    width: 50%;
+    border: 2px solid rgb(0, 255, 255);
+    border-radius: 20px;
+}
+
+.loading .linebox .line {
+    height: 20px;
+    border-radius: 20px;
+    background-color: aquamarine;
+    width: 0%;
+}
+
+.loading .loadingvalue{
+    margin: 8px;
+    color: white;
+    font-size: 25px;
 }
