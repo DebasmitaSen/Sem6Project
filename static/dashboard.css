@@ -50,7 +50,6 @@ main.table{
 }
 table{
     width: 100%;
-
 }
 
 table,th,td{
@@ -63,6 +62,7 @@ thead th{
     top: 0;
     left: 0;
     background-color: #a7c5e7;
+    z-index: 999;
 }
 
 tbody tr:nth-child(even){
@@ -193,5 +193,28 @@ tbody tr:hover{
     font-size: 40px;
     color: #6b0059;
     margin-left: 10px;
+}
+
+.delete-btn-icon {
+    font-size: 30px;
+    color: red;
+    margin-left: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+.swal-overlay {
+    background-color: #43288683;
+}
+
+.swal-modal {
+    border: 3px solid rgb(237, 9, 9);
     overflow: hidden;
+}
+
+.swal-text {
+    margin: 22px;
+    text-align: center;
+    color: #ec0c71;
+    padding: 17px;
+    display: block;
 }

@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'dashboard.css') }}">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{{ url_for('static', filename = 'sweetalert.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     
@@ -37,24 +39,60 @@
                         <th >Total Attendance</th>
                         <th >Semester</th>
                         <th>Details</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
 
                 {% for result in results %}
                 <tbody>
                    <tr>
-                    <td >{{ result[0] }}</td>
-                    <td >{{ result[1] }}</td>
-                    <td >{{ result[3] }}</td>
-                    <td ><p class="status sem{{ result[2] }}">Sem {{ result[2] }}</p></td>
-                    <td><a href="/{{ result[0] }}/student_dashboard"><ion-icon class="info" name="information-circle-outline"></ion-icon></a></td>
-                   </tr> 
+                        <td >{{ result[0] }}</td>
+                        <td >{{ result[1] }}</td>
+                        <td >{{ result[3] }}</td>
+                        <td ><p class="status sem{{ result[2] }}">Sem {{ result[2] }}</p></td>
+                        <td><a href="/{{ result[0] }}/student_dashboard"><ion-icon class="info" name="information-circle-outline"></ion-icon></a></td>
+                        <td><a data-id="{{ result[0] }}"><ion-icon class="delete-btn-icon" name="trash-sharp"></ion-icon></a></td>
+                    </tr> 
                 </tbody>
-                {% endfor %}
+                {% endfor %} 
             </table>
         </section>
 
     </main>
 
 </body>
+<script>
+    $(document).ready(function() {
+        $('a').click(function () {
+           var rowId = $(this).data('id');
+           swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this data!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    swal("Your file has been deleted Successfully!", {
+                        icon: "success",
+                        buttons: false
+                    });
+                    setTimeout(() => {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/delete',
+                            data: { rowId: rowId },
+                            success: function (response) {
+                                window.location.replace("/dashboard")
+                            }
+                        });
+                    }, 1100);   
+                } else {
+                    swal("Canceled Your Delete Operation!");
+                }
+            }); 
+        });
+    });
+</script>
 </html>

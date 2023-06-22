@@ -200,5 +200,21 @@ def student_dashboard(id):
 
     return render_template('student_dashboard.html', results = details, name = name, total_attendence = total_attendence, sem = sem, image = image, id = id)
 
+@app.route('/delete', methods = ['POST'])
+def delete():
+    if request.method == 'POST':
+        row_id = request.form['rowId']
+        connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
+        query = "DELETE FROM attendence WHERE id = %s"
+        db_execute_query.execute_query_(connection, query, row_id)
+        query_2 = "DELETE FROM total_attendence WHERE id = %s"
+        db_execute_query.execute_query_(connection, query_2, row_id)
+        query_3 = "DELETE FROM student_info WHERE id = %s"
+        db_execute_query.execute_query_(connection, query_3, row_id)    
+        connection.close()
+        path = 'Data/' + row_id
+        image_manupulation.remove_file(path)
+    return jsonify({'message': 'Success'})
+
 if __name__ == '__main__' :
     app.run(debug=True)
