@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2023 at 05:35 PM
+-- Generation Time: Jun 22, 2023 at 05:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -88,7 +88,14 @@ INSERT INTO `attendence` (`sl_no`, `id`, `name`, `login_info`) VALUES
 (51, 23, 'Brotin', '2023-06-17 05:47:58'),
 (52, 22, 'Romit', '2023-06-17 05:48:09'),
 (53, 303, 'Rajdeep Pal', '2023-06-17 14:54:30'),
-(54, 95, 'Rahul', '2023-06-17 15:30:46');
+(54, 95, 'Rahul', '2023-06-17 15:30:46'),
+(55, 79, 'Debasmita', '2023-06-19 12:45:09'),
+(56, 22, 'Romit', '2023-06-19 12:45:19'),
+(57, 79, 'Debasmita', '2023-06-21 10:44:06'),
+(58, 11, 'ssm', '2023-06-21 10:44:50'),
+(59, 95, 'Rahul', '2023-06-21 10:45:23'),
+(60, 22, 'Romit', '2023-06-21 10:45:37'),
+(61, 87, 'kusal paul', '2023-06-21 10:46:32');
 
 -- --------------------------------------------------------
 
@@ -107,7 +114,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`login_id`, `username`, `password`) VALUES
-(1, 'admin', 'admin123');
+(1, 'admin', 'admin123'),
+(3, 'test', '123');
 
 -- --------------------------------------------------------
 
@@ -157,13 +165,13 @@ CREATE TABLE `total_attendence` (
 --
 
 INSERT INTO `total_attendence` (`sl_no`, `id`, `name`, `semester`, `total_att`) VALUES
-(1, 11, 'ssm', 2, 2),
-(2, 22, 'Romit', 6, 7),
+(1, 11, 'ssm', 2, 3),
+(2, 22, 'Romit', 6, 9),
 (3, 23, 'Brotin', 2, 3),
 (4, 61, 'Anirban', 2, 3),
-(5, 79, 'Debasmita', 6, 7),
-(6, 87, 'kusal paul', 4, 5),
-(7, 95, 'Rahul', 6, 18),
+(5, 79, 'Debasmita', 6, 9),
+(6, 87, 'kusal paul', 4, 6),
+(7, 95, 'Rahul', 6, 19),
 (8, 105, 'Rajdip', 4, 4),
 (9, 123, 'dilar', 4, 1),
 (11, 303, 'Rajdeep Pal', 2, 1);
@@ -207,19 +215,19 @@ ALTER TABLE `total_attendence`
 -- AUTO_INCREMENT for table `attendence`
 --
 ALTER TABLE `attendence`
-  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `total_attendence`
 --
 ALTER TABLE `total_attendence`
-  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
