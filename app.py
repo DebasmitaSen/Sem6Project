@@ -168,13 +168,13 @@ def dashboard():
     if not session.get('user_id') :
         return redirect("/login")
     connection = db_conn.create_db_connection('localhost', 'root', '', 'students_details')
-    query = "select id, name, semester, total_att from total_attendence"
+    query = "select id, name, semester, total_att from total_attendence ORDER BY id"
     details = db_execute_query.read_query_(connection, query)
     if request.method == 'POST':
         sem = request.form['sem']
-        if sem == 'all':
+        if sem.lower() == 'all':
             return render_template('dashboard.html', results = details)
-        query = "select id, name, semester, total_att from total_attendence where semester = %s"
+        query = "select id, name, semester, total_att from total_attendence where semester = %s ORDER BY id"
         details = db_execute_query.read_query(connection, query, sem)
     connection.close()
     return render_template('dashboard.html', results = details)
