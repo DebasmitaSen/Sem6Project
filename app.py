@@ -192,7 +192,7 @@ def student_dashboard(id):
     detail = db_execute_query.read_query(connection, query_2, id)
     connection.close()
     for row in detail :
-            name, sem, total_attendence = row
+        name, sem, total_attendence = row
     
     path_1st_image = '/img1.jpg'
     path_1st_image = str(id) + path_1st_image
