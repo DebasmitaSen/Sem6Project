@@ -45,11 +45,11 @@ body {
        
    .container {   
           padding: 25px;   
-          background-color:linear-gradient(125deg,#422886,#532975);
+          background :linear-gradient(140deg,rgba(9, 43, 152, 0.25),rgb(7, 124, 156));
           margin:100px;
           position: relaitve;
           top:100%;
-          box-shadow: 8px 0px 30px rgb(41, 42, 49), -15px -15px 60px rgb(52, 5, 123);
+          box-shadow:  8px 0px 30px rgb(41, 42, 49), -15px -15px 60px rgb(52, 5, 123);
           width: 350px;
           height: auto;
           
